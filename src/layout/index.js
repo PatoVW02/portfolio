@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 import Navbar from "../components/navbar";
 import Background from "../components/background";
@@ -24,6 +25,7 @@ const MainLayout = ({ projectsRef, contactRef }) => {
             </div>
 
             <Analytics />
+            <SpeedInsights />
         </div>
     )
 };
