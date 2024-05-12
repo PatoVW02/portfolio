@@ -1,0 +1,399 @@
+/* Home Styles */
+.home-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 8%;
+}
+
+.main-content {
+    height: 100vh;
+}
+
+/* Media Queries */
+/* Mobile */
+@media screen and (min-width: 330px) {
+    .greetings h1 {
+        margin-top: 50%;
+        font-size: 4rem;
+    }
+
+    .Typewriter {
+        font-size: 1.5rem;
+    }
+
+    .descriptions-container {
+        margin-top: 15%;
+        font-size: 1rem;
+    }
+
+    .descriptions-container b {
+        text-decoration: underline;
+    }
+
+    .arrow-down {
+        margin-top: 20%;
+        font-size: 2.5rem;
+        color: #f1f1f1;
+        cursor: pointer;
+    }
+
+    .arrow-down p {
+        margin-top: 0;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 370px) {
+    .greetings h1 {
+        margin-top: 30%;
+        font-size: 4rem;
+    }
+
+    .Typewriter {
+        font-size: 1.5rem;
+    }
+
+    .descriptions-container {
+        margin-top: 15%;
+        font-size: 1rem;
+    }
+
+    .descriptions-container b {
+        text-decoration: underline;
+    }
+
+    .arrow-down {
+        margin-top: 20%;
+        font-size: 2.5rem;
+        color: #f1f1f1;
+        cursor: pointer;
+    }
+
+    .arrow-down p {
+        margin-top: 0;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 400px) {
+    .greetings h1 {
+        margin-top: 35%;
+        font-size: 3.5rem;
+    }
+
+    .Typewriter {
+        font-size: 1.5rem;
+    }
+
+    .descriptions-container {
+        margin-top: 25%;
+        font-size: 1.3rem;
+    }
+
+    .descriptions-container b {
+        text-decoration: underline;
+    }
+
+    .arrow-down {
+        margin-top: 30%;
+        font-size: 3rem;
+        color: #f1f1f1;
+        cursor: pointer;
+    }
+
+    .arrow-down p {
+        margin-top: 0;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 575px) {
+    .greetings h1 {
+        margin-top: 25%;
+        font-size: 3.5rem;
+    }
+
+    .Typewriter {
+        font-size: 1.5rem;
+    }
+
+    .descriptions-container {
+        margin-top: 15%;
+        font-size: 1.3rem;
+    }
+
+    .descriptions-container b {
+        text-decoration: underline;
+    }
+
+    .arrow-down {
+        margin-top: 40%;
+        font-size: 3rem;
+        color: #f1f1f1;
+        cursor: pointer;
+    }
+
+    .arrow-down p {
+        margin-top: 0;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .greetings h1 {
+        margin-top: 25%;
+        font-size: 3.5rem;
+    }
+
+    .Typewriter {
+        font-size: 1.5rem;
+    }
+
+    .descriptions-container {
+        margin-top: 15%;
+        font-size: 1.3rem;
+    }
+
+    .descriptions-container b {
+        text-decoration: underline;
+    }
+
+    .arrow-down {
+        margin-top: 30%;
+        font-size: 3rem;
+        color: #f1f1f1;
+        cursor: pointer;
+    }
+
+    .arrow-down p {
+        margin-top: 0;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 870px) {
+    .greetings h1 {
+        margin-top: 20%;
+        font-size: 5rem;
+    }
+
+    .Typewriter {
+        font-size: 2.5rem;
+    }
+
+    .descriptions-container {
+        margin-top: 10%;
+        font-size: 1.3rem;
+    }
+
+    .descriptions-container b {
+        text-decoration: underline;
+    }
+
+    .arrow-down {
+        margin-top: 15%;
+        font-size: 3rem;
+        color: #f1f1f1;
+        cursor: pointer;
+    }
+
+    .arrow-down p {
+        margin-top: 0;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 910px) {
+    .greetings h1 {
+        margin-top: 30%;
+        font-size: 6rem;
+    }
+
+    .Typewriter {
+        font-size: 3rem;
+    }
+
+    .descriptions-container {
+        margin-top: 10%;
+        font-size: 1.5rem;
+    }
+
+    .descriptions-container b {
+        text-decoration: underline;
+    }
+
+    .arrow-down {
+        margin-top: 30%;
+        font-size: 4rem;
+        color: #f1f1f1;
+        cursor: pointer;
+    }
+
+    .arrow-down p {
+        margin-top: 0;
+        font-size: 1.5rem;
+    }
+}
+
+/* Desktops */
+@media only screen and (min-width: 1024px){
+    .greetings h1 {
+        margin-top: 10%;
+        font-size: 5rem;
+    }
+
+    .Typewriter {
+        font-size: 2.2rem;
+    }
+
+    .descriptions-container {
+        margin-top: 13%;
+        font-size: 1.2rem;
+    }
+
+    .descriptions-container b {
+        text-decoration: underline;
+    }
+
+    .arrow-down {
+        margin-top: 10%;
+        font-size: 3.5rem;
+        color: #f1f1f1;
+        cursor: pointer;
+    }
+
+    .arrow-down p {
+        margin-top: 0;
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 1120px){
+    .greetings h1 {
+        margin-top: 10%;
+        font-size: 6rem;
+    }
+
+    .Typewriter {
+        font-size: 2.5rem;
+    }
+
+    .descriptions-container {
+        margin-top: 13%;
+        font-size: 1.5rem;
+    }
+
+    .descriptions-container b {
+        text-decoration: underline;
+    }
+
+    .arrow-down {
+        margin-top: 10%;
+        font-size: 3.5rem;
+        color: #f1f1f1;
+        cursor: pointer;
+    }
+
+    .arrow-down p {
+        margin-top: 0;
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .greetings h1 {
+        margin-top: 5%;
+        font-size: 6rem;
+    }
+
+    .Typewriter {
+        font-size: 2.5rem;
+    }
+
+    .descriptions-container {
+        margin-top: 8%;
+        font-size: 1.5rem;
+    }
+
+    .descriptions-container b {
+        text-decoration: underline;
+    }
+
+    .arrow-down {
+        margin-top: 13%;
+        font-size: 3.5rem;
+        color: #f1f1f1;
+        cursor: pointer;
+    }
+
+    .arrow-down p {
+        margin-top: 0;
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    .greetings h1 {
+        margin-top: 15%;
+        font-size: 6rem;
+    }
+
+    .Typewriter {
+        font-size: 2.5rem;
+    }
+
+    .descriptions-container {
+        margin-top: 8%;
+        font-size: 2rem;
+    }
+
+    .descriptions-container b {
+        text-decoration: underline;
+    }
+
+    .arrow-down {
+        margin-top: 15%;
+        font-size: 3.5rem;
+        color: #f1f1f1;
+        cursor: pointer;
+    }
+
+    .arrow-down p {
+        margin-top: 0;
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .greetings h1 {
+        margin-top: 5%;
+        font-size: 6rem;
+    }
+
+    .Typewriter {
+        font-size: 2.5rem;
+    }
+
+    .descriptions-container {
+        margin-top: 8%;
+        font-size: 2rem;
+    }
+
+    .descriptions-container b {
+        text-decoration: underline;
+    }
+
+    .arrow-down {
+        margin-top: 15%;
+        font-size: 3.5rem;
+        color: #f1f1f1;
+        cursor: pointer;
+    }
+
+    .arrow-down p {
+        margin-top: 0;
+        font-size: 1.5rem;
+    }
+}

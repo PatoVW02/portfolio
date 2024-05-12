@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useRef } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-function App() {
+import Home from "./views/home";
+import MainLayout from "./layout";
+
+import "./styles/App.css"
+
+const App = () => {
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+          <Route element={<MainLayout projectsRef={projectsRef} contactRef={contactRef} />}>
+          <Route path="/" element={<Home projectsRef={projectsRef} contactRef={contactRef} />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,662 @@
+/* Media Queries */
+/* Mobile */
+@media screen and (min-width: 330px) {
+    .projects-content h2 {
+        padding-top: 15%;
+        font-size: 3rem;
+        margin-bottom: 0;
+    }
+
+    .projects-carousel {
+        width: 90%;
+        padding-top: 3%;
+        margin: auto;
+    }
+
+    .project {
+        margin: 2%;
+        padding: 2%;
+        margin-bottom: 8%;
+        height: 31rem;
+        background-color: rgba(43, 43, 43, 0.9);
+        color: white;
+        border-radius: 1rem;
+    }
+
+    .project-main h3 {
+        font-size: 2rem;
+        margin-bottom: 0;
+        margin-top: 3%;
+    }
+
+    .project-main p {
+        font-size: 0.9rem;
+    }
+
+    .project-side {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .project-side a {
+        margin-top: 5%;
+        display: block;
+        color: white;
+        text-decoration: none;
+    }
+
+    .project-side img {
+        display: block;
+        height: 90%;
+        border-radius: 1rem;
+    }
+}
+
+@media screen and (min-width: 370px) {
+    .projects-content h2 {
+        padding-top: 15%;
+        font-size: 3rem;
+        margin-bottom: 0;
+    }
+
+    .projects-carousel {
+        width: 90%;
+        padding-top: 3%;
+        margin: auto;
+    }
+
+    .project {
+        margin: 2%;
+        margin-bottom: 8%;
+        padding: 2%;
+        height: 31rem;
+        background-color: rgba(43, 43, 43, 0.9);
+        color: white;
+        border-radius: 1rem;
+    }
+
+    .project-main h3 {
+        font-size: 2rem;
+        margin-bottom: 0;
+        margin-top: 3%;
+    }
+
+    .project-main p {
+        font-size: 0.9rem;
+    }
+
+    .project-side {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .project-side a {
+        margin-top: 5%;
+        display: block;
+        color: white;
+        text-decoration: none;
+    }
+
+    .project-side img {
+        display: block;
+        height: 90%;
+        border-radius: 1rem;
+    }
+}
+
+@media screen and (min-width: 400px) {
+    .projects-content h2 {
+        padding-top: 20%;
+        font-size: 3rem;
+        margin-bottom: 0;
+    }
+
+    .projects-carousel {
+        width: 90%;
+        padding-top: 3%;
+        margin: auto;
+    }
+
+    .project {
+        margin: 2%;
+        margin-bottom: 8%;
+        padding: 2%;
+        height: 31rem;
+        background-color: rgba(43, 43, 43, 0.9);
+        color: white;
+        border-radius: 1rem;
+    }
+
+    .project-main h3 {
+        font-size: 2rem;
+        margin-bottom: 0;
+        margin-top: 3%;
+    }
+
+    .project-main p {
+        font-size: 0.9rem;
+    }
+
+    .project-side {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .project-side a {
+        margin-top: 5%;
+        display: block;
+        color: white;
+        text-decoration: none;
+    }
+
+    .project-side img {
+        display: block;
+        height: 90%;
+        border-radius: 1rem;
+    }
+}
+
+@media screen and (min-width: 575px) {
+    .projects-content h2 {
+        padding-top: 15%;
+        font-size: 3rem;
+        margin-bottom: 0;
+    }
+
+    .projects-carousel {
+        width: 90%;
+        padding-top: 3%;
+        margin: auto;
+    }
+
+    .project {
+        margin: 2%;
+        margin-bottom: 8%;
+        padding: 2%;
+        height: 31rem;
+        background-color: rgba(43, 43, 43, 0.9);
+        color: white;
+        border-radius: 1rem;
+    }
+
+    .project-main h3 {
+        font-size: 2rem;
+        margin-bottom: 0;
+        margin-top: 3%;
+    }
+
+    .project-main p {
+        font-size: 0.9rem;
+    }
+
+    .project-side {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .project-side a {
+        margin-top: 5%;
+        display: block;
+        color: white;
+        text-decoration: none;
+    }
+
+    .project-side img {
+        display: block;
+        height: 90%;
+        border-radius: 1rem;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .projects-content h2 {
+        padding-top: 15%;
+        font-size: 3rem;
+        margin-bottom: 0;
+    }
+
+    .projects-carousel {
+        width: 90%;
+        padding-top: 3%;
+        margin: auto;
+    }
+
+    .project {
+        margin: 2%;
+        margin-bottom: 5%;
+        padding: 2%;
+        height: 43rem;
+        background-color: rgba(43, 43, 43, 0.9);
+        color: white;
+        border-radius: 1rem;
+    }
+
+    .project-main h3 {
+        font-size: 2rem;
+        margin-bottom: 0;
+        margin-top: 3%;
+    }
+
+    .project-main p {
+        font-size: 1.2rem;
+    }
+
+    .project-side {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .project-side a {
+        margin-top: 3%;
+        display: block;
+        color: white;
+        text-decoration: none;
+    }
+
+    .project-side img {
+        display: block;
+        height: 90%;
+        border-radius: 1rem;
+    }
+}
+
+@media screen and (min-width: 870px) {
+    .projects-content h2 {
+        padding-top: 15%;
+        font-size: 3rem;
+        margin-bottom: 0;
+    }
+
+    .projects-carousel {
+        width: 90%;
+        padding-top: 3%;
+        margin: auto;
+    }
+
+    .project {
+        margin: 2%;
+        margin-bottom: 8%;
+        padding: 2%;
+        height: 31rem;
+        background-color: rgba(43, 43, 43, 0.9);
+        color: white;
+        border-radius: 1rem;
+    }
+
+    .project-main h3 {
+        font-size: 2rem;
+        margin-bottom: 0;
+        margin-top: 3%;
+    }
+
+    .project-main p {
+        font-size: 0.9rem;
+    }
+
+    .project-side {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .project-side a {
+        margin-top: 5%;
+        display: block;
+        color: white;
+        text-decoration: none;
+    }
+
+    .project-side img {
+        display: block;
+        height: 90%;
+        border-radius: 1rem;
+    }
+}
+
+@media screen and (min-width: 910px) {
+    .projects-content h2 {
+        padding-top: 15%;
+        font-size: 4rem;
+        margin-bottom: 0;
+    }
+
+    .projects-carousel {
+        width: 90%;
+        padding-top: 3%;
+        margin: auto;
+    }
+
+    .project {
+        margin: 2%;
+        margin-bottom: 5%;
+        padding: 2%;
+        height: 52rem;
+        background-color: rgba(43, 43, 43, 0.9);
+        color: white;
+        border-radius: 1rem;
+    }
+
+    .project-main h3 {
+        font-size: 2.5rem;
+        margin-bottom: 0;
+        margin-top: 3%;
+    }
+
+    .project-main p {
+        font-size: 1.5rem;
+    }
+
+    .project-side {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .project-side a {
+        margin-top: 3%;
+        display: block;
+        color: white;
+        font-size: 1.3rem;
+        text-decoration: none;
+    }
+
+    .project-side img {
+        display: block;
+        height: 90%;
+        border-radius: 1rem;
+    }
+}
+
+/* Desktops */
+@media only screen and (min-width: 1024px){
+    .projects-content h2 {
+        padding-top: 8%;
+        padding-bottom: 0;
+        font-size: 4rem;
+        margin-bottom: 0;
+    }
+
+    .projects-carousel {
+        width: 80%;
+        margin-top: 0;
+    }
+
+    .project {
+        display: flex;
+        margin: 2%;
+        margin-bottom: 4%;
+        padding: 2%;
+        height: 30rem;
+        background-color: rgba(43, 43, 43, 0.9);
+        color: white;
+        border-radius: 1rem;
+    }
+
+    .project-main {
+        flex: 1;
+        align-content: center;
+    }
+
+    .project-main h3 {
+        font-size: 2.5rem;
+        margin-bottom: 0;
+    }
+
+    .project-main p {
+        font-size: 1.2rem;
+    }
+
+    .project-side {
+        flex: 1;
+        margin-left: 5%;
+        align-items: center;
+        align-content: center;
+    }
+
+    .project-side a {
+        display: block;
+        margin-top: 3%;
+        color: white;
+        text-decoration: none;
+    }
+
+    .project-side img {
+        display: block;
+        height: auto;
+        border-radius: 1rem;
+    }
+}
+
+@media only screen and (min-width: 1120px){
+    .projects-content h2 {
+        padding-top: 8%;
+        padding-bottom: 0;
+        font-size: 5rem;
+        margin-bottom: 0;
+    }
+
+    .projects-carousel {
+        width: 80%;
+        margin-top: 0;
+    }
+
+    .project {
+        display: flex;
+        margin: 2%;
+        margin-bottom: 4%;
+        padding: 2%;
+        height: 35rem;
+        background-color: rgba(43, 43, 43, 0.9);
+        color: white;
+        border-radius: 1rem;
+    }
+
+    .project-main {
+        flex: 1;
+        align-content: center;
+    }
+
+    .project-main h3 {
+        font-size: 3rem;
+        margin-bottom: 0;
+    }
+
+    .project-main p {
+        font-size: 1.5rem;
+    }
+
+    .project-side {
+        flex: 1;
+        margin-left: 5%;
+        align-items: center;
+        align-content: center;
+    }
+
+    .project-side a {
+        display: block;
+        margin-top: 3%;
+        color: white;
+        text-decoration: none;
+    }
+
+    .project-side img {
+        display: block;
+        height: auto;
+        border-radius: 1rem;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .projects-content h2 {
+        padding-top: 8%;
+        padding-bottom: 1%;
+        font-size: 5rem;
+        margin-bottom: 0;
+    }
+
+    .projects-carousel {
+        width: 60%;
+        margin-top: 0;
+    }
+
+    .project {
+        display: flex;
+        margin: 2%;
+        margin-bottom: 8%;
+        padding: 2%;
+        height: 40rem;
+        background-color: rgba(43, 43, 43, 0.9);
+        color: white;
+        border-radius: 1rem;
+    }
+
+    .project-main {
+        flex: 1;
+        align-content: center;
+    }
+
+    .project-main h3 {
+        font-size: 3rem;
+        margin-bottom: 0;
+    }
+
+    .project-main p {
+        font-size: 1.5rem;
+    }
+
+    .project-side {
+        flex: 1;
+        margin-left: 5%;
+        align-items: center;
+        align-content: center;
+    }
+
+    .project-side a {
+        display: block;
+        margin-top: 3%;
+        color: white;
+        text-decoration: none;
+    }
+
+    .project-side img {
+        display: block;
+        height: auto;
+        border-radius: 1rem;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    .projects-content h2 {
+        padding-top: 8%;
+        padding-bottom: 1%;
+        font-size: 5rem;
+        margin-bottom: 0;
+    }
+
+    .projects-carousel {
+        width: 80%;
+        margin-top: 0;
+    }
+
+    .project {
+        display: flex;
+        margin: 2%;
+        margin-bottom: 4%;
+        padding: 2%;
+        height: 40rem;
+        background-color: rgba(43, 43, 43, 0.9);
+        color: white;
+        border-radius: 1rem;
+    }
+
+    .project-main {
+        flex: 1;
+        align-content: center;
+    }
+
+    .project-main h3 {
+        font-size: 3rem;
+        margin-bottom: 0;
+    }
+
+    .project-main p {
+        font-size: 1.5rem;
+    }
+
+    .project-side {
+        flex: 1;
+        margin-left: 5%;
+        align-items: center;
+        align-content: center;
+    }
+
+    .project-side a {
+        display: block;
+        margin-top: 3%;
+        color: white;
+        text-decoration: none;
+    }
+
+    .project-side img {
+        display: block;
+        height: auto;
+        border-radius: 1rem;
+    }
+}
+
+
+@media only screen and (min-width: 1600px) {
+    .projects-content h2 {
+        padding-top: 8%;
+        padding-bottom: 1%;
+        font-size: 5rem;
+        margin-bottom: 0;
+    }
+
+    .projects-carousel {
+        width: 60%;
+        margin-top: 0;
+    }
+
+    .project {
+        display: flex;
+        margin: 2%;
+        padding: 2%;
+        height: 40rem;
+        background-color: rgba(43, 43, 43, 0.9);
+        color: white;
+        border-radius: 1rem;
+    }
+
+    .project-main {
+        flex: 1;
+        align-content: center;
+    }
+
+    .project-main h3 {
+        font-size: 3rem;
+        margin-bottom: 0;
+    }
+
+    .project-main p {
+        font-size: 1.5rem;
+    }
+
+    .project-side {
+        flex: 1;
+        margin-left: 5%;
+        align-items: center;
+        align-content: center;
+    }
+
+    .project-side a {
+        display: block;
+        margin-top: 3%;
+        color: white;
+        text-decoration: none;
+    }
+
+    .project-side img {
+        display: block;
+        height: auto;
+        border-radius: 1rem;
+    }
+}
