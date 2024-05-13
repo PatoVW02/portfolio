@@ -1,8 +1,8 @@
 import Typewriter from 'typewriter-effect';
 import { ArrowDownCircle } from 'react-bootstrap-icons';
-import { Carousel } from 'react-responsive-carousel';
 import { SocialIcon } from 'react-social-icons';
 
+import Project from '../../components/project';
 import projectsData from "../../data/projects.json";
 
 import "../../styles/Home.css"
@@ -20,7 +20,7 @@ const Home = ({ projectsRef, contactRef }) => {
         <div className="home-container">
             <div className="main-content">
                 <div className="greetings">
-                    <h1>Patricio Villarreal</h1>
+                    <h1>{'<'} Patricio Villarreal {'/>'}</h1>
                 </div>
 
                 <div className="description-container">
@@ -49,35 +49,15 @@ const Home = ({ projectsRef, contactRef }) => {
                 </div>
             </div>
 
-            <div className="projects-content" ref={projectsRef}>
-                <h2>My Projects</h2>
-                <Carousel
-                    className="projects-carousel"
-                    autoPlay
-                    infiniteLoop
-                    centerMode
-                    stopOnHover
-                    showThumbs={false}
-                    centerSlidePercentage={100}
-                >
-                    {projectsData.map(project => (
-                        <div key={project.id} className="project">
-                            <div className="project-main">
-                                <h3>{project.name}</h3>
-                                <p>{project.description}</p>
-                            </div>
-
-                            <div className="project-side">
-                                <img src={require(`../../assets/project${project.id}.png`)} alt={project.name} />
-                                <a href={project.url} target="_blank" rel="noreferrer">View Project</a>
-                            </div>
-                        </div>
-                    ))}
-                </Carousel>
+            <h3 className="secondary-title" ref={projectsRef}>My Work</h3>
+            <div className="projects-content">
+                {projectsData.map(project => (
+                    <Project project={project} />
+                ))}
             </div>
 
+            <h3 className="secondary-title">Contact Me</h3>
             <div className="contact-content" ref={contactRef}>
-                <h2>Contact Me</h2>
                 <div className="contact-info">
                     <p>Email: <a href="mailto:patovw@gmail.com">patovw@gmail.com</a></p>
                     <p>Phone: <a href="tel:+528115914144">+52 81 1591 4144</a></p>
