@@ -8,8 +8,9 @@ html {
     h2 {
         margin: 0;
         color: var(--accent);
+        text-align: left;
         left: 93%;
-        font-size: 1.5rem;
+        font-size: 8vw;
         font-weight: 700;
         line-height: 1.2;
         position: absolute;
@@ -65,7 +66,7 @@ html {
     }
 
     .project-image img {
-        height: 45vw;
+        max-width: 95%;
         margin-top: 1.3vh;
         margin-bottom: 1vh;
         object-fit: contain;
@@ -98,8 +99,9 @@ html {
     h2 {
         margin: 0;
         color: var(--accent);
+        text-align: left;
         left: 93%;
-        font-size: 1.5rem;
+        font-size: 8vw;
         font-weight: 700;
         line-height: 1.2;
         position: absolute;
@@ -155,7 +157,7 @@ html {
     }
 
     .project-image img {
-        height: 45vw;
+        max-width: 95%;
         margin-top: 1.3vh;
         margin-bottom: 1vh;
         object-fit: contain;
@@ -188,8 +190,9 @@ html {
     h2 {
         margin: 0;
         color: var(--accent);
+        text-align: left;
         left: 93%;
-        font-size: 1.5rem;
+        font-size: 7vw;
         font-weight: 700;
         line-height: 1.2;
         position: absolute;
@@ -245,7 +248,7 @@ html {
     }
 
     .project-image img {
-        height: 45vw;
+        max-width: 95%;
         margin-top: 1.3vh;
         margin-bottom: 1vh;
         object-fit: contain;
@@ -278,8 +281,9 @@ html {
     h2 {
         margin: 0;
         color: var(--accent);
+        text-align: left;
         left: 93%;
-        font-size: 1.5rem;
+        font-size: 8vw;
         font-weight: 700;
         line-height: 1.2;
         position: absolute;
@@ -335,7 +339,7 @@ html {
     }
 
     .project-image img {
-        height: 45vw;
+        max-width: 95%;
         margin-top: 1.3vh;
         margin-bottom: 1vh;
         object-fit: contain;
@@ -368,8 +372,9 @@ html {
     h2 {
         margin: 0;
         color: var(--accent);
+        text-align: left;
         left: 93%;
-        font-size: 1.5rem;
+        font-size: 6vw;
         font-weight: 700;
         line-height: 1.2;
         position: absolute;
@@ -425,7 +430,7 @@ html {
     }
 
     .project-image img {
-        height: 45vw;
+        max-width: 95%;
         margin-top: 1.3vh;
         margin-bottom: 1vh;
         object-fit: contain;
@@ -458,8 +463,9 @@ html {
     h2 {
         margin: 0;
         color: var(--accent);
+        text-align: left;
         left: 90%;
-        font-size: 2.5rem;
+        font-size: 8vw;
         font-weight: 700;
         line-height: 1.2;
         position: absolute;
@@ -515,7 +521,7 @@ html {
     }
 
     .project-image img {
-        height: 45vw;
+        max-width: 95%;
         margin-top: 1.3vh;
         margin-bottom: 1vh;
         object-fit: contain;
@@ -548,8 +554,9 @@ html {
     h2 {
         margin: 0;
         color: var(--accent);
+        text-align: left;
         left: 94%;
-        font-size: 3rem;
+        font-size: 8vw;
         font-weight: 700;
         line-height: 1.2;
         position: absolute;
@@ -605,7 +612,7 @@ html {
     }
 
     .project-image img {
-        height: 45vw;
+        max-width: 95%;
         margin-top: 1.3vh;
         margin-bottom: 1vh;
         object-fit: contain;
@@ -639,8 +646,9 @@ html {
     h2 {
         margin: 0;
         color: var(--accent);
+        text-align: left;
         left: 71%;
-        font-size: 4rem;
+        font-size: 5vw;
         font-weight: 700;
         line-height: 1.2;
         position: absolute;
@@ -695,7 +703,7 @@ html {
     }
 
     .project-image img {
-        height: 21vw;
+        max-width: 95%;
         margin-top: 1rem;
         margin-bottom: 0.5rem;
         object-fit: contain;
@@ -728,8 +736,9 @@ html {
     h2 {
         margin: 0;
         color: var(--accent);
+        text-align: left;
         left: 71%;
-        font-size: 4rem;
+        font-size: 5vw;
         font-weight: 700;
         line-height: 1.2;
         position: absolute;
@@ -784,7 +793,7 @@ html {
     }
 
     .project-image img {
-        height: 21vw;
+        max-width: 95%;
         margin-top: 1rem;
         margin-bottom: 0.5rem;
         object-fit: contain;
@@ -817,8 +826,9 @@ html {
     h2 {
         margin: 0;
         color: var(--accent);
+        text-align: left;
         left: 71%;
-        font-size: 4rem;
+        font-size: 5vw;
         font-weight: 700;
         line-height: 1.2;
         position: absolute;
@@ -873,7 +883,7 @@ html {
     }
 
     .project-image img {
-        height: 21vw;
+        max-width: 95%;
         margin-top: 1rem;
         margin-bottom: 0.5rem;
         object-fit: contain;
@@ -906,8 +916,9 @@ html {
     h2 {
         margin: 0;
         color: var(--accent);
+        text-align: left;
         left: 71%;
-        font-size: 4rem;
+        font-size: 5vw;
         font-weight: 700;
         line-height: 1.2;
         position: absolute;
@@ -962,7 +973,7 @@ html {
     }
 
     .project-image img {
-        height: 21vw;
+        max-width: 95%;
         margin-top: 1rem;
         margin-bottom: 0.5rem;
         object-fit: contain;
@@ -996,8 +1007,9 @@ html {
     h2 {
         margin: 0;
         color: var(--accent);
+        text-align: left;
         left: 71%;
-        font-size: 4rem;
+        font-size: 8vw;
         font-weight: 700;
         line-height: 1.2;
         position: absolute;
@@ -1052,7 +1064,7 @@ html {
     }
 
     .project-image img {
-        height: 22vw;
+        max-width: 95%;
         margin-top: 1rem;
         margin-bottom: 0.5rem;
         object-fit: contain;

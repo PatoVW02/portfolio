@@ -27,7 +27,7 @@ const Project = ({ project }) => {
 
                 <div className="project-footer">
                     <div className="project-date">
-                        Date: <b>{project.date}</b>
+                        <b>{project.date}</b>
                     </div>
                     <div className="project-technologies">
                         {project.technologies}

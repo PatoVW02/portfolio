@@ -15,8 +15,8 @@
 /* Mobile */
 @media screen and (min-width: 330px) and (max-width: 369px) {
     .greetings h1 {
-        margin-top: 40%;
-        font-size: 2rem;
+        margin-top: 20vh;
+        font-size: 8vw;
     }
 
     .secondary-title {
@@ -55,8 +55,8 @@
 
 @media screen and (min-width: 370px) and (max-width: 399px) {
     .greetings h1 {
-        margin-top: 50%;
-        font-size: 2rem;
+        margin-top: 20vh;
+        font-size: 8vw;
     }
 
     .secondary-title {
@@ -95,8 +95,8 @@
 
 @media screen and (min-width: 400px) and (max-width: 574px){
     .greetings h1 {
-        margin-top: 40%;
-        font-size: 2.4rem;
+        margin-top: 20vh;
+        font-size: 8vw;
     }
 
     .secondary-title {
@@ -135,8 +135,8 @@
 
 @media screen and (min-width: 575px) and (max-width: 749px) {
     .greetings h1 {
-        margin-top: 25%;
-        font-size: 3.5rem;
+        margin-top: 20vh;
+        font-size: 8vw;
     }
 
     .secondary-title {
@@ -175,8 +175,8 @@
 
 @media screen and (min-width: 750px) and (max-width: 869px) {
     .greetings h1 {
-        margin-top: 25%;
-        font-size: 3.5rem;
+        margin-top: 20vh;
+        font-size: 8vw;
     }
 
     .secondary-title {
@@ -215,8 +215,8 @@
 
 @media screen and (min-width: 870px) and (max-width: 909px) {
     .greetings h1 {
-        margin-top: 20%;
-        font-size: 5rem;
+        margin-top: 20vh;
+        font-size: 8vw;
     }
 
     .secondary-title {
@@ -255,8 +255,8 @@
 
 @media screen and (min-width: 910px) and (max-width: 1023px) {
     .greetings h1 {
-        margin-top: 30%;
-        font-size: 5.3rem;
+        margin-top: 20vh;
+        font-size: 8vw;
     }
 
     .secondary-title {
@@ -296,8 +296,8 @@
 /* Desktops */
 @media only screen and (min-width: 1024px) and (max-width: 1119px) {
     .greetings h1 {
-        margin-top: 10%;
-        font-size: 5rem;
+        margin-top: 15vh;
+        font-size: 5vw;
     }
 
     .secondary-title {
@@ -336,8 +336,8 @@
 
 @media only screen and (min-width: 1120px) and (max-width: 1199px) {
     .greetings h1 {
-        margin-top: 10%;
-        font-size: 6rem;
+        margin-top: 15vh;
+        font-size: 5vw;
     }
 
     .secondary-title {
@@ -376,8 +376,8 @@
 
 @media only screen and (min-width: 1200px) and (max-width: 1299px) {
     .greetings h1 {
-        margin-top: 5%;
-        font-size: 6rem;
+        margin-top: 15vh;
+        font-size: 5vw;
     }
 
     .secondary-title {
@@ -416,8 +416,8 @@
 
 @media only screen and (min-width: 1300px) and (max-width: 1599px) {
     .greetings h1 {
-        margin-top: 15%;
-        font-size: 6rem;
+        margin-top: 15vh;
+        font-size: 5vw;
     }
 
     .secondary-title {
@@ -456,8 +456,8 @@
 
 @media only screen and (min-width: 1600px) {
     .greetings h1 {
-        margin-top: 5%;
-        font-size: 6rem;
+        margin-top: 15vh;
+        font-size: 5vw;
     }
 
     .secondary-title {

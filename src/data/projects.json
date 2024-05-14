@@ -1,26 +1,38 @@
 [
     {
         "id": 1,
-        "name": "Project 1",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "technologies": "Python, Django, React, Redux, PostgreSQL",
-        "date": "2020-01-01",
-        "url": "https://www.google.com/"
+        "name": "Rojas Trailers",
+        "description": "Test description for Rojas Trailers",
+        "technologies": "React, Javascript",
+        "date": "2022, June",
+        "url": "http://rojas-trailers.vercel.app",
+        "repositories": ["https://github.com/PatoVW02/rojas-trailers"]
     },
     {
         "id": 2,
-        "name": "Project 2",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "technologies": "Python, Django, React, Redux, PostgreSQL",
-        "date": "2020-01-01",
-        "url": "https://www.google.com/"
+        "name": "Orgsbridge",
+        "description": "Test description for Orgsbridge",
+        "technologies": "Node.JS, Express, Swift",
+        "date": "2023, September",
+        "url": null,
+        "repositories": ["https://github.com/PatoVW02/orgsbridge-app", "https://github.com/PatoVW02/orgsbridge-backend"]
     },
     {
         "id": 3,
-        "name": "Project 3",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "technologies": "Python, Django, React, Redux, PostgreSQL",
-        "date": "2020-01-01",
-        "url": "https://www.google.com/"
+        "name": "Multiagent Warehouse",
+        "description": "Test description for Multiagent Warehouse System",
+        "technologies": "Python, Flask, Unity, C#",
+        "date": "2023, October",
+        "url": null,
+        "repositories": ["https://github.com/PatoVW02/Multi-Agent-Warehouse-System"]
+    },
+    {
+        "id": 4,
+        "name": "Dream Lab System",
+        "description": "Test description for Dream Lab System",
+        "technologies": "Python, Fastapi, React, Javascript, Redux",
+        "date": "2024, February",
+        "url": null,
+        "repositories": ["https://github.com/TecFive/DREAM-Lab", "https://github.com/TecFive/backend-dream-lab"]
     }
 ]
