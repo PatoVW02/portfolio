@@ -2,721 +2,672 @@
 /* Mobile */
 @media screen and (min-width: 330px) and (max-width: 369px) {
     .contact-content {
-        margin-top: 10%;
-        margin-bottom: 15rem;
+        margin-bottom: 20vh;
     }
 
-    .contact-content h2 {
-        font-size: 5rem;
-        margin-bottom: 0;
+    .email-caption {
+        margin-top: 3vh;
+        font-size: 1.1rem;
     }
 
-    .contact-info p {
-        font-size: 1.5rem;
+    .email-caption-light {
+        text-decoration: none;
+        color: #cfcfcf;
     }
 
-    .contact-info a {
+    .email {
+        display: inline-block;
+        font-size: 1.7rem;
+        font-weight: bolder;
+        cursor: pointer;
+        text-decoration: none;
+        color: #f1f1f1;
+        transition: all 0.3s ease;
+    }
+
+    .email:hover {
+        color: #cfcfcf;
+        transform: scale(1.1);
+        transition: 0.3s
+    }
+
+    .email:active {
+        color: #f1f1f1;
+        transform: scale(0.8);
+    }
+
+    .email-copied {
+        font-size: 3rem;
+        font-weight: bolder;
         text-decoration: none;
         color: #f1f1f1;
     }
 
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 5%;
-        padding: 5%;
-        border-radius: 1rem;
-        background-color: #ededed;
+    .location-detail {
+        margin-top: 3vh;
+        font-size: 1.3rem;
     }
 
-    .contact-form input, textarea {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
+    .social-media {
+        margin-top: 3vh;
     }
 
-    .contact-form button {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
-        background-color: #2f2f2f;
-        color: #f1f1f1;
+    .social-icon {
+        margin: 0 1rem;
         cursor: pointer;
-        transition: 0.5s;
-    }
-
-    .contact-form button:hover {
-        background-color: #797979;
-    }
-
-    .contact-form button:active {
-        background-color: #2f2f2f;
     }
 }
 
 @media screen and (min-width: 370px) and (max-width: 399px) {
     .contact-content {
-        margin-top: 10%;
-        margin-bottom: 15rem;
+        margin-bottom: 20vh;
     }
 
-    .contact-content h2 {
-        font-size: 5rem;
-        margin-bottom: 0;
+    .email-caption {
+        margin-top: 3vh;
+        font-size: 1.1rem;
     }
 
-    .contact-info p {
-        font-size: 1.5rem;
+    .email-caption-light {
+        text-decoration: none;
+        color: #cfcfcf;
     }
 
-    .contact-info a {
+    .email {
+        display: inline-block;
+        font-size: 1.7rem;
+        font-weight: bolder;
+        cursor: pointer;
+        text-decoration: none;
+        color: #f1f1f1;
+        transition: all 0.3s ease;
+    }
+
+    .email:hover {
+        color: #cfcfcf;
+        transform: scale(1.1);
+        transition: 0.3s
+    }
+
+    .email:active {
+        color: #f1f1f1;
+        transform: scale(0.8);
+    }
+
+    .email-copied {
+        font-size: 3rem;
+        font-weight: bolder;
         text-decoration: none;
         color: #f1f1f1;
     }
 
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 5%;
-        padding: 5%;
-        border-radius: 1rem;
-        background-color: #ededed;
+    .location-detail {
+        margin-top: 3vh;
+        font-size: 1.3rem;
     }
 
-    .contact-form input, textarea {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
+    .social-media {
+        margin-top: 3vh;
     }
 
-    .contact-form button {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
-        background-color: #2f2f2f;
-        color: #f1f1f1;
+    .social-icon {
+        margin: 0 1rem;
         cursor: pointer;
-        transition: 0.5s;
-    }
-
-    .contact-form button:hover {
-        background-color: #797979;
-    }
-
-    .contact-form button:active {
-        background-color: #2f2f2f;
     }
 }
 
 @media screen and (min-width: 400px) and (max-width: 574px){
     .contact-content {
-        margin-top: 10%;
-        margin-bottom: 15rem;
+        margin-bottom: 20vh;
     }
 
-    .contact-content h2 {
-        font-size: 5rem;
-        margin-bottom: 0;
+    .email-caption {
+        margin-top: 3vh;
+        font-size: 1.3rem;
     }
 
-    .contact-info p {
-        font-size: 1.5rem;
+    .email-caption-light {
+        text-decoration: none;
+        color: #cfcfcf;
     }
 
-    .contact-info a {
+    .email {
+        display: inline-block;
+        font-size: 2rem;
+        font-weight: bolder;
+        cursor: pointer;
+        text-decoration: none;
+        color: #f1f1f1;
+        transition: all 0.3s ease;
+    }
+
+    .email:hover {
+        color: #cfcfcf;
+        transform: scale(1.1);
+        transition: 0.3s
+    }
+
+    .email:active {
+        color: #f1f1f1;
+        transform: scale(0.8);
+    }
+
+    .email-copied {
+        font-size: 3rem;
+        font-weight: bolder;
         text-decoration: none;
         color: #f1f1f1;
     }
 
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 5%;
-        padding: 5%;
-        border-radius: 1rem;
-        background-color: #ededed;
+    .location-detail {
+        margin-top: 3vh;
+        font-size: 1.5rem;
     }
 
-    .contact-form input, textarea {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
+    .social-media {
+        margin-top: 3vh;
     }
 
-    .contact-form button {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
-        background-color: #2f2f2f;
-        color: #f1f1f1;
+    .social-icon {
+        margin: 0 1rem;
         cursor: pointer;
-        transition: 0.5s;
-    }
-
-    .contact-form button:hover {
-        background-color: #797979;
-    }
-
-    .contact-form button:active {
-        background-color: #2f2f2f;
     }
 }
 
 @media screen and (min-width: 575px) and (max-width: 749px) {
     .contact-content {
-        margin-top: 10%;
-        margin-bottom: 15rem;
+        margin-bottom: 20vh;
     }
 
-    .contact-content h2 {
-        font-size: 5rem;
-        margin-bottom: 0;
+    .email-caption {
+        margin-top: 3vh;
+        font-size: 1.3rem;
     }
 
-    .contact-info p {
-        font-size: 1.5rem;
+    .email-caption-light {
+        text-decoration: none;
+        color: #cfcfcf;
     }
 
-    .contact-info a {
+    .email {
+        display: inline-block;
+        font-size: 2rem;
+        font-weight: bolder;
+        cursor: pointer;
+        text-decoration: none;
+        color: #f1f1f1;
+        transition: all 0.3s ease;
+    }
+
+    .email:hover {
+        color: #cfcfcf;
+        transform: scale(1.1);
+        transition: 0.3s
+    }
+
+    .email:active {
+        color: #f1f1f1;
+        transform: scale(0.8);
+    }
+
+    .email-copied {
+        font-size: 3rem;
+        font-weight: bolder;
         text-decoration: none;
         color: #f1f1f1;
     }
 
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 5%;
-        padding: 5%;
-        border-radius: 1rem;
-        background-color: #ededed;
+    .location-detail {
+        margin-top: 3vh;
+        font-size: 1.5rem;
     }
 
-    .contact-form input, textarea {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
+    .social-media {
+        margin-top: 3vh;
     }
 
-    .contact-form button {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
-        background-color: #2f2f2f;
-        color: #f1f1f1;
+    .social-icon {
+        margin: 0 1rem;
         cursor: pointer;
-        transition: 0.5s;
-    }
-
-    .contact-form button:hover {
-        background-color: #797979;
-    }
-
-    .contact-form button:active {
-        background-color: #2f2f2f;
     }
 }
 
 @media screen and (min-width: 750px) and (max-width: 869px) {
     .contact-content {
-        margin-top: 10%;
-        margin-bottom: 15rem;
+        margin-bottom: 20vh;
     }
 
-    .contact-content h2 {
-        font-size: 5rem;
-        margin-bottom: 0;
+    .email-caption {
+        margin-top: 3vh;
+        font-size: 1.7rem;
     }
 
-    .contact-info p {
-        font-size: 1.5rem;
+    .email-caption-light {
+        text-decoration: none;
+        color: #cfcfcf;
     }
 
-    .contact-info a {
+    .email {
+        display: inline-block;
+        font-size: 2.7rem;
+        font-weight: bolder;
+        cursor: pointer;
+        text-decoration: none;
+        color: #f1f1f1;
+        transition: all 0.3s ease;
+    }
+
+    .email:hover {
+        color: #cfcfcf;
+        transform: scale(1.1);
+        transition: 0.3s
+    }
+
+    .email:active {
+        color: #f1f1f1;
+        transform: scale(0.8);
+    }
+
+    .email-copied {
+        font-size: 3rem;
+        font-weight: bolder;
         text-decoration: none;
         color: #f1f1f1;
     }
 
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 5%;
-        padding: 5%;
-        border-radius: 1rem;
-        background-color: #ededed;
+    .location-detail {
+        margin-top: 3vh;
+        font-size: 1.7rem;
     }
 
-    .contact-form input, textarea {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
+    .social-media {
+        margin-top: 3vh;
     }
 
-    .contact-form button {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
-        background-color: #2f2f2f;
-        color: #f1f1f1;
+    .social-icon {
+        margin: 0 1rem;
         cursor: pointer;
-        transition: 0.5s;
-    }
-
-    .contact-form button:hover {
-        background-color: #797979;
-    }
-
-    .contact-form button:active {
-        background-color: #2f2f2f;
     }
 }
 
 @media screen and (min-width: 870px) and (max-width: 909px) {
     .contact-content {
-        margin-top: 10%;
-        margin-bottom: 15rem;
+        margin-bottom: 20vh;
     }
 
-    .contact-content h2 {
-        font-size: 5rem;
-        margin-bottom: 0;
+    .email-caption {
+        margin-top: 3vh;
+        font-size: 1.3rem;
     }
 
-    .contact-info p {
-        font-size: 1.5rem;
+    .email-caption-light {
+        text-decoration: none;
+        color: #cfcfcf;
     }
 
-    .contact-info a {
+    .email {
+        display: inline-block;
+        font-size: 2rem;
+        font-weight: bolder;
+        cursor: pointer;
+        text-decoration: none;
+        color: #f1f1f1;
+        transition: all 0.3s ease;
+    }
+
+    .email:hover {
+        color: #cfcfcf;
+        transform: scale(1.1);
+        transition: 0.3s
+    }
+
+    .email:active {
+        color: #f1f1f1;
+        transform: scale(0.8);
+    }
+
+    .email-copied {
+        font-size: 3rem;
+        font-weight: bolder;
         text-decoration: none;
         color: #f1f1f1;
     }
 
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 5%;
-        padding: 5%;
-        border-radius: 1rem;
-        background-color: #ededed;
+    .location-detail {
+        margin-top: 3vh;
+        font-size: 1.5rem;
     }
 
-    .contact-form input, textarea {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
+    .social-media {
+        margin-top: 3vh;
     }
 
-    .contact-form button {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
-        background-color: #2f2f2f;
-        color: #f1f1f1;
+    .social-icon {
+        margin: 0 1rem;
         cursor: pointer;
-        transition: 0.5s;
-    }
-
-    .contact-form button:hover {
-        background-color: #797979;
-    }
-
-    .contact-form button:active {
-        background-color: #2f2f2f;
     }
 }
 
 @media screen and (min-width: 910px) and (max-width: 1023px) {
     .contact-content {
-        margin-top: 10%;
-        margin-bottom: 15rem;
+        margin-bottom: 20vh;
     }
 
-    .contact-content h2 {
-        font-size: 5rem;
-        margin-bottom: 0;
+    .email-caption {
+        margin-top: 3vh;
+        font-size: 2.3rem;
     }
 
-    .contact-info p {
-        font-size: 1.5rem;
+    .email-caption-light {
+        text-decoration: none;
+        color: #cfcfcf;
     }
 
-    .contact-info a {
+    .email {
+        display: inline-block;
+        font-size: 3.7rem;
+        font-weight: bolder;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .email:hover {
+        color: #cfcfcf;
+        transform: scale(1.1);
+        transition: 0.3s
+    }
+
+    .email:active {
+        transform: scale(0.8);
+    }
+
+    .email-copied {
+        font-size: 3rem;
+        font-weight: bolder;
         text-decoration: none;
         color: #f1f1f1;
     }
 
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 5%;
-        padding: 5%;
-        border-radius: 1rem;
-        background-color: #ededed;
+    .location-detail {
+        margin-top: 3vh;
+        font-size: 2.3rem;
     }
 
-    .contact-form input, textarea {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
+    .social-media {
+        margin-top: 3vh;
     }
 
-    .contact-form button {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
-        background-color: #2f2f2f;
-        color: #f1f1f1;
+    .social-icon {
+        margin: 0 1rem;
         cursor: pointer;
-        transition: 0.5s;
-    }
-
-    .contact-form button:hover {
-        background-color: #797979;
-    }
-
-    .contact-form button:active {
-        background-color: #2f2f2f;
     }
 }
 
 /* Desktops */
 @media only screen and (min-width: 1024px) and (max-width: 1119px) {
     .contact-content {
-        margin-top: 10%;
-        margin-bottom: 15rem;
+        margin-bottom: 20vh;
     }
 
-    .contact-content h2 {
-        font-size: 5rem;
-        margin-bottom: 0;
-    }
-
-    .contact-info p {
+    .email-caption {
         font-size: 1.5rem;
     }
 
-    .contact-info a {
+    .email-caption-light {
+        text-decoration: none;
+        color: #cfcfcf;
+    }
+
+    .email {
+        display: inline-block;
+        font-size: 3rem;
+        font-weight: bolder;
+        cursor: pointer;
+        text-decoration: none;
+        color: #f1f1f1;
+        transition: all 0.3s ease;
+    }
+
+    .email:hover {
+        color: #cfcfcf;
+        transform: scale(1.1);
+        transition: 0.3s
+    }
+
+    .email:active {
+        color: #f1f1f1;
+        transform: scale(0.8);
+    }
+
+    .email-copied {
+        font-size: 3rem;
+        font-weight: bolder;
         text-decoration: none;
         color: #f1f1f1;
     }
 
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 5%;
-        padding: 5%;
-        border-radius: 1rem;
-        background-color: #ededed;
+    .location-detail {
+        margin-top: 3vh;
+        font-size: 1.5rem;
     }
 
-    .contact-form input, textarea {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
+    .social-media {
+        margin-top: 3vh;
     }
 
-    .contact-form button {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
-        background-color: #2f2f2f;
-        color: #f1f1f1;
+    .social-icon {
+        margin: 0 1rem;
         cursor: pointer;
-        transition: 0.5s;
-    }
-
-    .contact-form button:hover {
-        background-color: #797979;
-    }
-
-    .contact-form button:active {
-        background-color: #2f2f2f;
     }
 }
 
 @media only screen and (min-width: 1120px) and (max-width: 1199px) {
     .contact-content {
-        margin-top: 10%;
-        margin-bottom: 15rem;
+        margin-bottom: 20vh;
     }
 
-    .contact-content h2 {
-        font-size: 5rem;
-        margin-bottom: 0;
-    }
-
-    .contact-info p {
+    .email-caption {
         font-size: 1.5rem;
     }
 
-    .contact-info a {
+    .email-caption-light {
+        text-decoration: none;
+        color: #cfcfcf;
+    }
+
+    .email {
+        display: inline-block;
+        font-size: 3rem;
+        font-weight: bolder;
+        cursor: pointer;
+        text-decoration: none;
+        color: #f1f1f1;
+        transition: all 0.3s ease;
+    }
+
+    .email:hover {
+        color: #cfcfcf;
+        transform: scale(1.1);
+        transition: 0.3s
+    }
+
+    .email:active {
+        color: #f1f1f1;
+        transform: scale(0.8);
+    }
+
+    .email-copied {
+        font-size: 3rem;
+        font-weight: bolder;
         text-decoration: none;
         color: #f1f1f1;
     }
 
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 5%;
-        padding: 5%;
-        border-radius: 1rem;
-        background-color: #ededed;
+    .location-detail {
+        margin-top: 3vh;
+        font-size: 1.5rem;
     }
 
-    .contact-form input, textarea {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
+    .social-media {
+        margin-top: 3vh;
     }
 
-    .contact-form button {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
-        background-color: #2f2f2f;
-        color: #f1f1f1;
+    .social-icon {
+        margin: 0 1rem;
         cursor: pointer;
-        transition: 0.5s;
-    }
-
-    .contact-form button:hover {
-        background-color: #797979;
-    }
-
-    .contact-form button:active {
-        background-color: #2f2f2f;
     }
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1299px) {
     .contact-content {
-        margin-top: 10%;
-        margin-bottom: 15rem;
+        margin-bottom: 20vh;
     }
 
-    .contact-content h2 {
-        font-size: 5rem;
-        margin-bottom: 0;
-    }
-
-    .contact-info p {
+    .email-caption {
         font-size: 1.5rem;
     }
 
-    .contact-info a {
+    .email-caption-light {
+        text-decoration: none;
+        color: #cfcfcf;
+    }
+
+    .email {
+        display: inline-block;
+        font-size: 3rem;
+        font-weight: bolder;
+        cursor: pointer;
+        text-decoration: none;
+        color: #f1f1f1;
+        transition: all 0.3s ease;
+    }
+
+    .email:hover {
+        color: #cfcfcf;
+        transform: scale(1.1);
+        transition: 0.3s
+    }
+
+    .email:active {
+        color: #f1f1f1;
+        transform: scale(0.8);
+    }
+
+    .email-copied {
+        font-size: 3rem;
+        font-weight: bolder;
         text-decoration: none;
         color: #f1f1f1;
     }
 
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 5%;
-        padding: 5%;
-        border-radius: 1rem;
-        background-color: #ededed;
+    .location-detail {
+        margin-top: 3vh;
+        font-size: 1.5rem;
     }
 
-    .contact-form input, textarea {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
+    .social-media {
+        margin-top: 3vh;
     }
 
-    .contact-form button {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
-        background-color: #2f2f2f;
-        color: #f1f1f1;
+    .social-icon {
+        margin: 0 1rem;
         cursor: pointer;
-        transition: 0.5s;
-    }
-
-    .contact-form button:hover {
-        background-color: #797979;
-    }
-
-    .contact-form button:active {
-        background-color: #2f2f2f;
     }
 }
 
 @media only screen and (min-width: 1300px) and (max-width: 1599px) {
     .contact-content {
-        margin-top: 10%;
-        margin-bottom: 15rem;
+        margin-bottom: 20vh;
     }
 
-    .contact-content h2 {
-        font-size: 5rem;
-        margin-bottom: 0;
-    }
-
-    .contact-info p {
+    .email-caption {
         font-size: 1.5rem;
     }
 
-    .contact-info a {
+    .email-caption-light {
+        text-decoration: none;
+        color: #cfcfcf;
+    }
+
+    .email {
+        display: inline-block;
+        font-size: 3rem;
+        font-weight: bolder;
+        cursor: pointer;
+        text-decoration: none;
+        color: #f1f1f1;
+        transition: all 0.3s ease;
+    }
+
+    .email:hover {
+        color: #cfcfcf;
+        transform: scale(1.1);
+        transition: 0.3s
+    }
+
+    .email:active {
+        color: #f1f1f1;
+        transform: scale(0.8);
+    }
+
+    .email-copied {
+        font-size: 3rem;
+        font-weight: bolder;
         text-decoration: none;
         color: #f1f1f1;
     }
 
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 5%;
-        padding: 5%;
-        border-radius: 1rem;
-        background-color: #ededed;
+    .location-detail {
+        margin-top: 3vh;
+        font-size: 1.5rem;
     }
 
-    .contact-form input, textarea {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
+    .social-media {
+        margin-top: 3vh;
     }
 
-    .contact-form button {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
-        background-color: #2f2f2f;
-        color: #f1f1f1;
+    .social-icon {
+        margin: 0 1rem;
         cursor: pointer;
-        transition: 0.5s;
-    }
-
-    .contact-form button:hover {
-        background-color: #797979;
-    }
-
-    .contact-form button:active {
-        background-color: #2f2f2f;
     }
 }
 
 @media only screen and (min-width: 1600px) {
     .contact-content {
-        margin-top: 10%;
-        margin-bottom: 15rem;
+        margin-bottom: 20vh;
     }
 
-    .contact-content h2 {
-        font-size: 5rem;
-        margin-bottom: 0;
-    }
-
-    .contact-info p {
+    .email-caption {
         font-size: 1.5rem;
     }
 
-    .contact-info a {
+    .email-caption-light {
+        text-decoration: none;
+        color: #cfcfcf;
+    }
+
+    .email {
+        display: inline-block;
+        font-size: 3rem;
+        font-weight: bolder;
+        cursor: pointer;
         text-decoration: none;
         color: #f1f1f1;
+        transition: all 0.3s ease;
     }
 
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 5%;
-        padding: 5%;
-        border-radius: 1rem;
-        background-color: #ededed;
+    .location-detail {
+        margin-top: 3vh;
+        font-size: 1.5rem;
     }
 
-    .contact-form input, textarea {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
+    .social-media {
+        margin-top: 3vh;
     }
 
-    .contact-form button {
-        width: 50%;
-        padding: 1%;
-        margin: 1%;
-        border-radius: 5px;
-        border: none;
-        background-color: #2f2f2f;
-        color: #f1f1f1;
+    .social-icon {
+        margin: 0 1rem;
         cursor: pointer;
-        transition: 0.5s;
-    }
-
-    .contact-form button:hover {
-        background-color: #797979;
-    }
-
-    .contact-form button:active {
-        background-color: #2f2f2f;
     }
 }

@@ -1,9 +1,21 @@
+import { useState } from 'react';
 import { m } from 'framer-motion';
 import { SocialIcon } from 'react-social-icons';
 
 import "../../styles/Contact.css"
 
 const Contact = ({ contactRef }) => {
+    const [isEmailCopied, setIsEmailCopied] = useState(false);
+
+    const copyEmail = () => {
+        navigator.clipboard.writeText("patovw@gmail.com");
+        setIsEmailCopied(true);
+
+        setTimeout(() => {
+            setIsEmailCopied(false);
+        } , 2000);
+    }
+
     return (
         <>
             <m.h3
@@ -16,30 +28,50 @@ const Contact = ({ contactRef }) => {
             >
                 Contact Me
             </m.h3>
+
             <div className="contact-content">
                 <div className="contact-info">
-                    <p>Email: <a href="mailto:patovw@gmail.com">patovw@gmail.com</a></p>
-
-                    <div className="social-media">
-                        <SocialIcon url="https://www.linkedin.com/in/patricio-villarreal-welsh-a786901b4" target="_blank" bgColor="transparent" fgColor='white' />
-                        <SocialIcon url="https://github.com/PatoVW02" target="_blank" bgColor="transparent" fgColor='white' />
-                        <SocialIcon url="https://www.instagram.com/patovw02" target="_blank" bgColor="transparent" fgColor='white' />
+                    <div className="email-caption">
+                        Get in touch
+                        <span className="email-caption-light">
+                            {' (click to copy)'}
+                        </span>
                     </div>
 
-                    <p>Location: Monterrey, Mexico</p>
+                    {!isEmailCopied ? (
+                        <m.span
+                            className="email"
+                            onClick={copyEmail}
+                            whileHover={{
+                                scale: 1.1,
+                                color: "#cfcfcf",
+                                transition: { duration: 0 }
+                            }}
+                            whileTap={{
+                                scale: 0.8,
+                                color: "white",
+                                transition: { duration: 0 }
+                            }}
+                        >
+                            patovw@gmail.com
+                        </m.span>
+                    ) : (
+                        <m.div className="email">
+                            Email copied!
+                        </m.div>
+                    )}
 
-                    <div className="contact-form">
-                        <form>
-                            <input type="text" placeholder="Name" />
-                            <input type="email" placeholder="Email" />
-                            <textarea placeholder="Message"></textarea>
-                            <button type="submit" onClick={(e) => e.preventDefault()}>Send</button>
-                        </form>
+                    <div className="location-detail">Location: Monterrey, Mexico</div>
+
+                    <div className="social-media">
+                        <SocialIcon className="social-icon" url="https://www.linkedin.com/in/patricio-villarreal-welsh-a786901b4" target="_blank" bgColor="transparent" fgColor='white' />
+                        <SocialIcon className="social-icon" url="https://github.com/PatoVW02" target="_blank" bgColor="transparent" fgColor='white' />
+                        <SocialIcon className="social-icon" url="https://www.instagram.com/patovw02" target="_blank" bgColor="transparent" fgColor='white' />
                     </div>
                 </div>
             </div>
         </>
     )
-};
+}
 
 export default Contact;
