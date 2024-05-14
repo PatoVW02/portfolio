@@ -5,14 +5,6 @@ html {
 /* Media Queries */
 /* Mobile */
 @media screen and (min-width: 330px) and (max-width: 369px) {
-    .secondary-title {
-        padding-top: 20%;
-        padding-bottom: 4%;
-        font-size: 2rem;
-        margin-bottom: 0;
-        left: default;
-    }
-
     h2 {
         margin: 0;
         color: var(--accent);
@@ -103,14 +95,6 @@ html {
 }
 
 @media screen and (min-width: 370px) and (max-width: 399px) {
-    .secondary-title {
-        padding-top: 20%;
-        padding-bottom: 4%;
-        font-size: 2rem;
-        margin-bottom: 0;
-        left: default;
-    }
-
     h2 {
         margin: 0;
         color: var(--accent);
@@ -201,14 +185,6 @@ html {
 }
 
 @media screen and (min-width: 400px) and (max-width: 574px) {
-    .secondary-title {
-        padding-top: 20%;
-        padding-bottom: 4%;
-        font-size: 2.4rem;
-        margin-bottom: 0;
-        left: default;
-    }
-
     h2 {
         margin: 0;
         color: var(--accent);
@@ -299,14 +275,6 @@ html {
 }
 
 @media screen and (min-width: 575px) and (max-width: 749px){
-    .secondary-title {
-        padding-top: 20%;
-        padding-bottom: 4%;
-        font-size: 3.5rem;
-        margin-bottom: 0;
-        left: default;
-    }
-
     h2 {
         margin: 0;
         color: var(--accent);
@@ -397,14 +365,6 @@ html {
 }
 
 @media screen and (min-width: 750px) and (max-width: 869px) {
-    .secondary-title {
-        padding-top: 20%;
-        padding-bottom: 4%;
-        font-size: 3.5rem;
-        margin-bottom: 0;
-        left: default;
-    }
-
     h2 {
         margin: 0;
         color: var(--accent);
@@ -495,14 +455,6 @@ html {
 }
 
 @media screen and (min-width: 870px) and (max-width: 909px) {
-    .secondary-title {
-        padding-top: 20%;
-        padding-bottom: 4%;
-        font-size: 5rem;
-        margin-bottom: 0;
-        left: default;
-    }
-
     h2 {
         margin: 0;
         color: var(--accent);
@@ -593,14 +545,6 @@ html {
 }
 
 @media screen and (min-width: 910px) and (max-width: 1023px) {
-    .secondary-title {
-        padding-top: 20%;
-        padding-bottom: 4%;
-        font-size: 5.3rem;
-        margin-bottom: 0;
-        left: default;
-    }
-
     h2 {
         margin: 0;
         color: var(--accent);
@@ -692,14 +636,6 @@ html {
 
 /* Desktops */
 @media only screen and (min-width: 1024px) and (max-width: 1119px) {
-    .secondary-title {
-        padding-top: 6%;
-        padding-bottom: 4%;
-        font-size: 5rem;
-        margin-bottom: 0;
-        left: default;
-    }
-
     h2 {
         margin: 0;
         color: var(--accent);
@@ -789,14 +725,6 @@ html {
 }
 
 @media only screen and (min-width: 1120px) and (max-width: 1199px) {
-    .secondary-title {
-        padding-top: 6%;
-        padding-bottom: 4%;
-        font-size: 6rem;
-        margin-bottom: 0;
-        left: default;
-    }
-
     h2 {
         margin: 0;
         color: var(--accent);
@@ -886,14 +814,6 @@ html {
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1299px) {
-    .secondary-title {
-        padding-top: 6%;
-        padding-bottom: 4%;
-        font-size: 6rem;
-        margin-bottom: 0;
-        left: default;
-    }
-
     h2 {
         margin: 0;
         color: var(--accent);
@@ -983,14 +903,6 @@ html {
 }
 
 @media only screen and (min-width: 1300px) and (max-width: 1599px) {
-    .secondary-title {
-        padding-top: 6%;
-        padding-bottom: 4%;
-        font-size: 6rem;
-        margin-bottom: 0;
-        left: default;
-    }
-
     h2 {
         margin: 0;
         color: var(--accent);
@@ -1081,14 +993,6 @@ html {
 
 
 @media only screen and (min-width: 1600px) {
-    .secondary-title {
-        padding-top: 6%;
-        padding-bottom: 4%;
-        font-size: 6rem;
-        margin-bottom: 0;
-        left: default;
-    }
-
     h2 {
         margin: 0;
         color: var(--accent);

@@ -12,7 +12,10 @@ const Project = ({ project }) => {
 
     return (
         <section>
-            <div ref={ref}>
+            <motion.div ref={ref} whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.5 }
+            }}>
                 <div className="project-content">
                     <div className="project-image">
                         <img src={require(`../../assets/project${project.id}.png`)} alt="Project" />
@@ -34,7 +37,7 @@ const Project = ({ project }) => {
                 <div className="project-link">
                     <a href={project.url} target="_blank" rel="noreferrer">View Project</a>
                 </div>
-            </div>
+            </motion.div>
 
             <motion.h2 className="project-title" style={{ y }}>{project.name}</motion.h2>
         </section>
