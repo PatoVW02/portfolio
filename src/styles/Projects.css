@@ -28,7 +28,6 @@ html {
 
     section > div {
         width: 75vw;
-        height: 65vh;
         position: relative;
         background: var(--white);
         overflow: hidden;
@@ -40,16 +39,18 @@ html {
         font-size: 1.2rem;
         padding-left: 5vw;
         padding-right: 5vw;
+        text-align: justify;
+        text-justify: inter-word;
     }
 
     .project-footer {
         display: flex;
         justify-content: space-between;
         align-items: end;
-        position: absolute;
         bottom: 5.5vh;
         width: 100%;
         padding-top: 1vh;
+        margin-top: 2vh;
         border-top: 0.1rem solid rgb(179, 179, 179, 0.8);
     }
 
@@ -83,8 +84,8 @@ html {
         width: 86%;
         color: white;
         background-color: rgba(43, 43, 43, 1);
+        border: none;
         border-radius: 1rem;
-        position: absolute;
         bottom: 0;
         text-decoration: none;
         transition: 0.5s;
@@ -119,7 +120,6 @@ html {
 
     section > div {
         width: 75vw;
-        height: 65vh;
         position: relative;
         background: var(--white);
         overflow: hidden;
@@ -131,16 +131,18 @@ html {
         font-size: 1.1rem;
         padding-left: 5vw;
         padding-right: 5vw;
+        text-align: justify;
+        text-justify: inter-word;
     }
 
     .project-footer {
         display: flex;
         justify-content: space-between;
         align-items: end;
-        position: absolute;
         bottom: 6vh;
         width: 100%;
         padding-top: 1vh;
+        margin-top: 2vh;
         border-top: 0.1rem solid rgb(179, 179, 179, 0.8);
     }
 
@@ -175,7 +177,7 @@ html {
         color: white;
         background-color: rgba(43, 43, 43, 1);
         border-radius: 1rem;
-        position: absolute;
+        border: none;
         bottom: 0;
         text-decoration: none;
         transition: 0.5s;
@@ -210,7 +212,6 @@ html {
 
     section > div {
         width: 75vw;
-        height: 65vh;
         position: relative;
         background: var(--white);
         overflow: hidden;
@@ -222,16 +223,18 @@ html {
         font-size: 1.3rem;
         padding-left: 5vw;
         padding-right: 5vw;
+        text-align: justify;
+        text-justify: inter-word;
     }
 
     .project-footer {
         display: flex;
         justify-content: space-between;
         align-items: end;
-        position: absolute;
         bottom: 6vh;
         width: 100%;
         padding-top: 1vh;
+        margin-top: 2vh;
         border-top: 0.1rem solid rgb(179, 179, 179, 0.8);
     }
 
@@ -266,7 +269,7 @@ html {
         color: white;
         background-color: rgba(43, 43, 43, 1);
         border-radius: 1rem;
-        position: absolute;
+        border: none;
         bottom: 0;
         text-decoration: none;
         transition: 0.5s;
@@ -301,7 +304,6 @@ html {
 
     section > div {
         width: 75vw;
-        height: 65vh;
         position: relative;
         background: var(--white);
         overflow: hidden;
@@ -313,16 +315,18 @@ html {
         font-size: 1.1rem;
         padding-left: 5vw;
         padding-right: 5vw;
+        text-align: justify;
+        text-justify: inter-word;
     }
 
     .project-footer {
         display: flex;
         justify-content: space-between;
         align-items: end;
-        position: absolute;
         bottom: 7vh;
         width: 100%;
         padding-top: 1vh;
+        margin-top: 2vh;
         border-top: 0.1rem solid rgb(179, 179, 179, 0.8);
     }
 
@@ -357,7 +361,7 @@ html {
         color: white;
         background-color: rgba(43, 43, 43, 1);
         border-radius: 1rem;
-        position: absolute;
+        border: none;
         bottom: 0;
         text-decoration: none;
         transition: 0.5s;
@@ -392,7 +396,6 @@ html {
 
     section > div {
         width: 75vw;
-        height: 65vh;
         position: relative;
         background: var(--white);
         overflow: hidden;
@@ -404,16 +407,18 @@ html {
         font-size: 1.4rem;
         padding-left: 5vw;
         padding-right: 5vw;
+        text-align: justify;
+        text-justify: inter-word;
     }
 
     .project-footer {
         display: flex;
         justify-content: space-between;
         align-items: end;
-        position: absolute;
         bottom: 6vh;
         width: 100%;
         padding-top: 1vh;
+        margin-top: 2vh;
         border-top: 0.1rem solid rgb(179, 179, 179, 0.8);
     }
 
@@ -448,7 +453,7 @@ html {
         color: white;
         background-color: rgba(43, 43, 43, 1);
         border-radius: 1rem;
-        position: absolute;
+        border: none;
         bottom: 0;
         text-decoration: none;
         transition: 0.5s;
@@ -483,7 +488,6 @@ html {
 
     section > div {
         width: 75vw;
-        height: 65vh;
         position: relative;
         background: var(--white);
         overflow: hidden;
@@ -495,16 +499,18 @@ html {
         font-size: 1.1rem;
         padding-left: 5vw;
         padding-right: 5vw;
+        text-align: justify;
+        text-justify: inter-word;
     }
 
     .project-footer {
         display: flex;
         justify-content: space-between;
         align-items: end;
-        position: absolute;
         bottom: 7vh;
         width: 100%;
         padding-top: 1vh;
+        margin-top: 2vh;
         border-top: 0.1rem solid rgb(179, 179, 179, 0.8);
     }
 
@@ -539,7 +545,7 @@ html {
         color: white;
         background-color: rgba(43, 43, 43, 1);
         border-radius: 1rem;
-        position: absolute;
+        border: none;
         bottom: 0;
         text-decoration: none;
         transition: 0.5s;
@@ -556,7 +562,7 @@ html {
         color: var(--accent);
         text-align: left;
         left: 94%;
-        font-size: 8vw;
+        font-size: 7vw;
         font-weight: 700;
         line-height: 1.2;
         position: absolute;
@@ -574,7 +580,6 @@ html {
 
     section > div {
         width: 75vw;
-        height: 65vh;
         position: relative;
         background: var(--white);
         overflow: hidden;
@@ -586,16 +591,18 @@ html {
         font-size: 2rem;
         padding-left: 5vw;
         padding-right: 5vw;
+        text-align: justify;
+        text-justify: inter-word;
     }
 
     .project-footer {
         display: flex;
         justify-content: space-between;
         align-items: end;
-        position: absolute;
         bottom: 7vh;
         width: 100%;
         padding-top: 1vh;
+        margin-top: 2vh;
         border-top: 0.1rem solid rgb(179, 179, 179, 0.8);
     }
 
@@ -630,7 +637,7 @@ html {
         color: white;
         background-color: rgba(43, 43, 43, 1);
         border-radius: 1rem;
-        position: absolute;
+        border: none;
         bottom: 0;
         text-decoration: none;
         transition: 0.5s;
@@ -660,45 +667,100 @@ html {
         justify-content: center;
         align-items: center;
         position: relative;
+        flex-direction: row;
     }
 
-    section > div {
-        width: 35vw;
-        height: 70vh;
+    .repos {
+        position: absolute;
+        left: 8vw;
+        top: 20vh;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 2rem
+    }
+
+    .repos img {
+        width: 8vw;
+    }
+
+    .repos a {
         position: relative;
-        max-height: 90vh;
+        display: inline-block;
+    }
+
+    .repos a .tooltip-text {
+        visibility: hidden;
+        width: 120px;
+        background-color: rgb(115, 115, 115);
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 100%; /* Position the tooltip above the icon */
+        left: 50%;
+        margin-left: -60px; /* Center the tooltip */
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+
+    .repos a .tooltip-text::after {
+        content: "";
+        position: absolute;
+        top: 100%; /* Bottom of the tooltip */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: rgb(180, 180, 180) transparent transparent transparent;
+    }
+
+    .repos a:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .project-card {
+        width: 35vw;
+        position: relative;
         background: var(--white);
         overflow: hidden;
         background-color: rgb(115, 115, 115);
         border-radius: 1rem;
+        z-index: 1; /* Ensure the card is above the repos */
     }
 
     .project-description {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         padding-left: 2vw;
         padding-right: 2vw;
+        text-align: justify;
+        text-justify: inter-word;
     }
 
     .project-footer {
         display: flex;
         justify-content: space-between;
         align-items: end;
-        position: absolute;
         bottom: 6vh;
         width: 100%;
-        padding-top: 1%;
-        border-top: 0.1rem solid rgb(179, 179, 179, 0.8);
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        margin-top: 2vh;
+        border-top: 0.1rem solid rgba(179, 179, 179, 0.8);
     }
 
     .project-date {
         margin: 2%;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         color: rgba(255, 255, 255, 0.7);
     }
 
     .project-technologies {
         margin: 2%;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         color: rgba(255, 255, 255, 0.7);
     }
 
@@ -708,27 +770,6 @@ html {
         margin-bottom: 0.5rem;
         object-fit: contain;
         border-radius: 1rem;
-    }
-
-    .project-link a {
-        display: block;
-        font-size: 1.1rem;
-        margin: 2%;
-        margin-left: 5%;
-        margin-right: 5%;
-        padding: 2%;
-        width: 86%;
-        color: white;
-        background-color: rgba(43, 43, 43, 1);
-        border-radius: 1rem;
-        position: absolute;
-        bottom: 0;
-        text-decoration: none;
-        transition: 0.5s;
-    }
-
-    .project-link a:hover {
-        background-color: rgba(43, 43, 43, 0.7);
     }
 }
 
@@ -750,34 +791,89 @@ html {
         justify-content: center;
         align-items: center;
         position: relative;
+        flex-direction: row;
     }
 
-    section > div {
-        width: 35vw;
-        height: 70vh;
+    .repos {
+        position: absolute;
+        left: 8vw;
+        top: 20vh;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 2rem
+    }
+
+    .repos img {
+        width: 8vw;
+    }
+
+    .repos a {
         position: relative;
-        max-height: 90vh;
+        display: inline-block;
+    }
+
+    .repos a .tooltip-text {
+        visibility: hidden;
+        width: 120px;
+        background-color: rgb(115, 115, 115);
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 100%; /* Position the tooltip above the icon */
+        left: 50%;
+        margin-left: -60px; /* Center the tooltip */
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+
+    .repos a .tooltip-text::after {
+        content: "";
+        position: absolute;
+        top: 100%; /* Bottom of the tooltip */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: rgb(180, 180, 180) transparent transparent transparent;
+    }
+
+    .repos a:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .project-card {
+        width: 35vw;
+        position: relative;
         background: var(--white);
         overflow: hidden;
         background-color: rgb(115, 115, 115);
         border-radius: 1rem;
+        z-index: 1; /* Ensure the card is above the repos */
     }
 
     .project-description {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         padding-left: 2vw;
         padding-right: 2vw;
+        text-align: justify;
+        text-justify: inter-word;
     }
 
     .project-footer {
         display: flex;
         justify-content: space-between;
         align-items: end;
-        position: absolute;
         bottom: 6vh;
         width: 100%;
-        padding-top: 1%;
-        border-top: 0.1rem solid rgb(179, 179, 179, 0.8);
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        margin-top: 2vh;
+        border-top: 0.1rem solid rgba(179, 179, 179, 0.8);
     }
 
     .project-date {
@@ -798,27 +894,6 @@ html {
         margin-bottom: 0.5rem;
         object-fit: contain;
         border-radius: 1rem;
-    }
-
-    .project-link a {
-        display: block;
-        font-size: 1.1rem;
-        margin: 2%;
-        margin-left: 5%;
-        margin-right: 5%;
-        padding: 2%;
-        width: 86%;
-        color: white;
-        background-color: rgba(43, 43, 43, 1);
-        border-radius: 1rem;
-        position: absolute;
-        bottom: 0;
-        text-decoration: none;
-        transition: 0.5s;
-    }
-
-    .project-link a:hover {
-        background-color: rgba(43, 43, 43, 0.7);
     }
 }
 
@@ -840,45 +915,98 @@ html {
         justify-content: center;
         align-items: center;
         position: relative;
+        flex-direction: row;
     }
 
-    section > div {
-        width: 35vw;
-        height: 70vh;
+    .repos {
+        position: absolute;
+        left: 8vw;
+        top: 20vh;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 2rem
+    }
+
+    .repos img {
+        width: 8vw;
+    }
+
+    .repos a {
         position: relative;
-        max-height: 90vh;
+        display: inline-block;
+    }
+
+    .repos a .tooltip-text {
+        visibility: hidden;
+        width: 120px;
+        background-color: rgb(115, 115, 115);
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 100%; /* Position the tooltip above the icon */
+        left: 50%;
+        margin-left: -60px; /* Center the tooltip */
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+
+    .repos a .tooltip-text::after {
+        content: "";
+        position: absolute;
+        top: 100%; /* Bottom of the tooltip */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: rgb(180, 180, 180) transparent transparent transparent;
+    }
+
+    .repos a:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .project-card {
+        width: 35vw;
+        position: relative;
         background: var(--white);
         overflow: hidden;
         background-color: rgb(115, 115, 115);
         border-radius: 1rem;
+        z-index: 1; /* Ensure the card is above the repos */
     }
 
     .project-description {
         font-size: 1.5rem;
         padding-left: 2vw;
         padding-right: 2vw;
+        text-align: justify;
+        text-justify: inter-word;
     }
 
     .project-footer {
         display: flex;
         justify-content: space-between;
         align-items: end;
-        position: absolute;
         bottom: 6vh;
         width: 100%;
-        padding-top: 1%;
-        border-top: 0.1rem solid rgb(179, 179, 179, 0.8);
+        margin-top: 2vh;
+        border-top: 0.1rem solid rgba(179, 179, 179, 0.8);
     }
 
     .project-date {
         margin: 2%;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         color: rgba(255, 255, 255, 0.7);
     }
 
     .project-technologies {
         margin: 2%;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         color: rgba(255, 255, 255, 0.7);
     }
 
@@ -888,27 +1016,6 @@ html {
         margin-bottom: 0.5rem;
         object-fit: contain;
         border-radius: 1rem;
-    }
-
-    .project-link a {
-        display: block;
-        font-size: 1.2rem;
-        margin: 2%;
-        margin-left: 5%;
-        margin-right: 5%;
-        padding: 2%;
-        width: 86%;
-        color: white;
-        background-color: rgba(43, 43, 43, 1);
-        border-radius: 1rem;
-        position: absolute;
-        bottom: 0;
-        text-decoration: none;
-        transition: 0.5s;
-    }
-
-    .project-link a:hover {
-        background-color: rgba(43, 43, 43, 0.7);
     }
 }
 
@@ -930,34 +1037,89 @@ html {
         justify-content: center;
         align-items: center;
         position: relative;
+        flex-direction: row;
     }
 
-    section > div {
-        width: 35vw;
-        height: 70vh;
+    .repos {
+        position: absolute;
+        left: 8vw;
+        top: 20vh;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 2rem
+    }
+
+    .repos img {
+        width: 8vw;
+    }
+
+    .repos a {
         position: relative;
-        max-height: 90vh;
+        display: inline-block;
+    }
+
+    .repos a .tooltip-text {
+        visibility: hidden;
+        width: 120px;
+        background-color: rgb(115, 115, 115);
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 100%; /* Position the tooltip above the icon */
+        left: 50%;
+        margin-left: -60px; /* Center the tooltip */
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+
+    .repos a .tooltip-text::after {
+        content: "";
+        position: absolute;
+        top: 100%; /* Bottom of the tooltip */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: rgb(180, 180, 180) transparent transparent transparent;
+    }
+
+    .repos a:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .project-card {
+        width: 35vw;
+        position: relative;
         background: var(--white);
         overflow: hidden;
         background-color: rgb(115, 115, 115);
         border-radius: 1rem;
+        z-index: 1; /* Ensure the card is above the repos */
     }
 
     .project-description {
         font-size: 1.5rem;
         padding-left: 2vw;
         padding-right: 2vw;
+        text-align: justify;
+        text-justify: inter-word;
     }
 
     .project-footer {
         display: flex;
         justify-content: space-between;
         align-items: end;
-        position: absolute;
         bottom: 6vh;
         width: 100%;
-        padding-top: 1%;
-        border-top: 0.1rem solid rgb(179, 179, 179, 0.8);
+        margin-top: 2vh;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        border-top: 0.1rem solid rgba(179, 179, 179, 0.8);
     }
 
     .project-date {
@@ -978,27 +1140,6 @@ html {
         margin-bottom: 0.5rem;
         object-fit: contain;
         border-radius: 1rem;
-    }
-
-    .project-link a {
-        display: block;
-        font-size: 1.2rem;
-        margin: 2%;
-        margin-left: 5%;
-        margin-right: 5%;
-        padding: 2%;
-        width: 86%;
-        color: white;
-        background-color: rgba(43, 43, 43, 1);
-        border-radius: 1rem;
-        position: absolute;
-        bottom: 0;
-        text-decoration: none;
-        transition: 0.5s;
-    }
-
-    .project-link a:hover {
-        background-color: rgba(43, 43, 43, 0.7);
     }
 }
 
@@ -1021,45 +1162,100 @@ html {
         justify-content: center;
         align-items: center;
         position: relative;
+        flex-direction: row;
     }
 
-    section > div {
-        width: 35vw;
-        height: 70vh;
+    .repos {
+        position: absolute;
+        left: 8vw;
+        top: 20vh;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 2rem
+    }
+
+    .repos img {
+        width: 8vw;
+    }
+
+    .repos a {
         position: relative;
-        max-height: 90vh;
+        display: inline-block;
+    }
+
+    .repos a .tooltip-text {
+        visibility: hidden;
+        width: 120px;
+        background-color: rgb(115, 115, 115);
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 100%; /* Position the tooltip above the icon */
+        left: 50%;
+        margin-left: -60px; /* Center the tooltip */
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+
+    .repos a .tooltip-text::after {
+        content: "";
+        position: absolute;
+        top: 100%; /* Bottom of the tooltip */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: rgb(180, 180, 180) transparent transparent transparent;
+    }
+
+    .repos a:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .project-card {
+        width: 35vw;
+        position: relative;
         background: var(--white);
         overflow: hidden;
         background-color: rgb(115, 115, 115);
         border-radius: 1rem;
+        z-index: 1; /* Ensure the card is above the repos */
     }
 
     .project-description {
         font-size: 1.5rem;
         padding-left: 2vw;
         padding-right: 2vw;
+        text-align: justify;
+        text-justify: inter-word;
     }
 
     .project-footer {
         display: flex;
         justify-content: space-between;
         align-items: end;
-        position: absolute;
-        bottom: 6vh;
+        bottom: 5vh;
         width: 100%;
-        padding-top: 1%;
-        border-top: 0.1rem solid rgb(179, 179, 179, 0.8);
+        margin-top: 2vh;
+        padding-top: 0.8vh;
+        padding-bottom: 0.8vh;
+        border-top: 0.1rem solid rgba(179, 179, 179, 0.8);
     }
 
     .project-date {
         margin: 2%;
-        font-size: 1rem;
+        font-size: 0.9rem;
         color: rgba(255, 255, 255, 0.7);
     }
 
     .project-technologies {
         margin: 2%;
-        font-size: 1rem;
+        font-size: 0.9rem;
         color: rgba(255, 255, 255, 0.7);
     }
 
@@ -1069,26 +1265,5 @@ html {
         margin-bottom: 0.5rem;
         object-fit: contain;
         border-radius: 1rem;
-    }
-
-    .project-link a {
-        display: block;
-        font-size: 1.3rem;
-        margin: 2%;
-        margin-left: 5%;
-        margin-right: 5%;
-        padding: 2%;
-        width: 86%;
-        color: white;
-        background-color: rgba(43, 43, 43, 1);
-        border-radius: 1rem;
-        position: absolute;
-        bottom: 0;
-        text-decoration: none;
-        transition: 0.5s;
-    }
-
-    .project-link a:hover {
-        background-color: rgba(43, 43, 43, 0.7);
     }
 }

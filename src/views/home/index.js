@@ -43,7 +43,7 @@ const Home = ({ projectsRef, contactRef }) => {
 
                         <div className="descriptions-container">
                             <p className="description-1">
-                                I have experience working with different technologies and frameworks such as <b>React</b>, <b>Node.js</b>, <b>Express</b>, <b>MongoDB</b>, <b>Swift</b>, <b>Python</b>, <b>.NET</b> and <b>C#</b>.
+                                I have experience working with different technologies and frameworks such as <b>React</b>, <b>Node.js</b>, <b>Express</b>, <b>MongoDB</b>, <b>Swift</b>, <b>Python</b>, <b>Fastapi</b>, <b>.NET</b> and <b>C#</b>.
                             </p>
                             <p className="description-2">
                                 I'm always looking for new challenges and opportunities to learn and grow as a developer.

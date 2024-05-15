@@ -2,37 +2,49 @@
     {
         "id": 1,
         "name": "Rojas Trailers",
-        "description": "Test description for Rojas Trailers",
-        "technologies": "React, Javascript",
+        "description": "Landing page for a trailer company that offers different services involving trailers. The website allows users to see the services that the company offers, the trailers that they have available, and the contact information. The website also allows users to contact the company through a form.",
+        "technologies": "React, Javascript, NodeJS",
         "date": "2022, June",
-        "url": "http://rojas-trailers.vercel.app",
-        "repositories": ["https://github.com/PatoVW02/rojas-trailers"]
+        "repositories": {
+            "project": "http://rojas-trailers.vercel.app",
+            "frontend": "https://github.com/PatoVW02/rojas-trailers",
+            "backend": null
+        }
     },
     {
         "id": 2,
         "name": "Orgsbridge",
-        "description": "Test description for Orgsbridge",
-        "technologies": "Node.JS, Express, Swift",
+        "description": "Application that connects users with organizations that offer help to kids with certain conditions, providing support, etc. The application allows users to search for organizations that can help them with their needs and allows organizations to get known by the community.",
+        "technologies": "NodeJS, Express, Swift, MongoDB",
         "date": "2023, September",
-        "url": null,
-        "repositories": ["https://github.com/PatoVW02/orgsbridge-app", "https://github.com/PatoVW02/orgsbridge-backend"]
+        "repositories": {
+            "project": null,
+            "frontend": "https://github.com/PatoVW02/orgsbridge-app",
+            "backend": "https://github.com/PatoVW02/orgsbridge-backend"
+        }
     },
     {
         "id": 3,
         "name": "Multiagent Warehouse",
-        "description": "Test description for Multiagent Warehouse System",
+        "description": "Unity simulation that uses a multi-agent system to manage a warehouse's boxes that are coming in from a conveyor belt utilizing self controlled robots.",
         "technologies": "Python, Flask, Unity, C#",
         "date": "2023, October",
-        "url": null,
-        "repositories": ["https://github.com/PatoVW02/Multi-Agent-Warehouse-System"]
+        "repositories": {
+            "project": null,
+            "frontend": "https://github.com/PatoVW02/Multi-Agent-Warehouse-System",
+            "backend": null
+        }
     },
     {
         "id": 4,
         "name": "Dream Lab System",
-        "description": "Test description for Dream Lab System",
-        "technologies": "Python, Fastapi, React, Javascript, Redux",
+        "description": "Website that allows users to create and manage their own reservations inside a laboratory inside a university. Users are able to reserve a room with a specific equipment for a specific time. The system also allows the admin to manage the users and the reservations.",
+        "technologies": "Python, Fastapi, React, Javascript, Redux, MongoDB",
         "date": "2024, February",
-        "url": null,
-        "repositories": ["https://github.com/TecFive/DREAM-Lab", "https://github.com/TecFive/backend-dream-lab"]
+        "repositories": {
+            "project": null,
+            "frontend": "https://github.com/TecFive/DREAM-Lab",
+            "backend": "https://github.com/TecFive/backend-dream-lab"
+        }
     }
 ]
