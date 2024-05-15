@@ -33,10 +33,17 @@ const Project = ({ project }) => {
         <section>
             {width >= 1024 && (
                 <m.div className="repos" animate={controls}>
-                    {project.repositories.project && (
-                        <a href={project.repositories.project} target="_blank" rel="noreferrer">
+                    {project.repositories.website && (
+                        <a href={project.repositories.website} target="_blank" rel="noreferrer">
                             <img src={require('../../assets/website-94.png')} alt="Project" />
-                            <span className="tooltip-text">Project</span>
+                            <span className="tooltip-text">Website</span>
+                        </a>
+                    )}
+
+                    {project.repositories.code && (
+                        <a href={project.repositories.code} target="_blank" rel="noreferrer">
+                            <img src={require('../../assets/github-188.png')} alt="Project" />
+                            <span className="tooltip-text">Code</span>
                         </a>
                     )}
 
@@ -81,7 +88,7 @@ const Project = ({ project }) => {
                 {width < 1024 && (
                     <div className="project-link">
                         <a
-                            href={project.repositories.project ? project.repositories.project : project.repositories.frontend}
+                            href={project.repositories.website ? project.repositories.website : project.repositories.code ? project.repositories.code : project.repositories.frontend ? project.repositories.frontend : project.repositories.backend}
                             target="_blank"
                             rel="noreferrer">
                             View Project

@@ -68,6 +68,7 @@ html {
 
     .project-image img {
         max-width: 95%;
+        max-height: 30vh;
         margin-top: 1.3vh;
         margin-bottom: 1vh;
         object-fit: contain;
@@ -160,6 +161,7 @@ html {
 
     .project-image img {
         max-width: 95%;
+        max-height: 35vh;
         margin-top: 1.3vh;
         margin-bottom: 1vh;
         object-fit: contain;
@@ -252,6 +254,7 @@ html {
 
     .project-image img {
         max-width: 95%;
+        max-height: 30vh;
         margin-top: 1.3vh;
         margin-bottom: 1vh;
         object-fit: contain;
@@ -344,6 +347,7 @@ html {
 
     .project-image img {
         max-width: 95%;
+        max-height: 50vh;
         margin-top: 1.3vh;
         margin-bottom: 1vh;
         object-fit: contain;
@@ -436,6 +440,7 @@ html {
 
     .project-image img {
         max-width: 95%;
+        max-height: 35vh;
         margin-top: 1.3vh;
         margin-bottom: 1vh;
         object-fit: contain;
@@ -528,6 +533,7 @@ html {
 
     .project-image img {
         max-width: 95%;
+        max-height: 50vh;
         margin-top: 1.3vh;
         margin-bottom: 1vh;
         object-fit: contain;
@@ -562,7 +568,7 @@ html {
         color: var(--accent);
         text-align: left;
         left: 94%;
-        font-size: 7vw;
+        font-size: 5vw;
         font-weight: 700;
         line-height: 1.2;
         position: absolute;
@@ -620,6 +626,7 @@ html {
 
     .project-image img {
         max-width: 95%;
+        max-height: 40vh;
         margin-top: 1.3vh;
         margin-bottom: 1vh;
         object-fit: contain;
@@ -655,7 +662,7 @@ html {
         color: var(--accent);
         text-align: left;
         left: 71%;
-        font-size: 5vw;
+        font-size: 4vw;
         font-weight: 700;
         line-height: 1.2;
         position: absolute;
@@ -682,6 +689,15 @@ html {
 
     .repos img {
         width: 8vw;
+        transition: 0.5s;
+    }
+
+    .repos img:hover {
+        transform: scale(1.2);
+    }
+
+    .repos img:active {
+        transform: scale(0.8);
     }
 
     .repos a {
@@ -766,6 +782,7 @@ html {
 
     .project-image img {
         max-width: 95%;
+        max-height: 35vh;
         margin-top: 1rem;
         margin-bottom: 0.5rem;
         object-fit: contain;
@@ -779,7 +796,7 @@ html {
         color: var(--accent);
         text-align: left;
         left: 71%;
-        font-size: 5vw;
+        font-size: 4vw;
         font-weight: 700;
         line-height: 1.2;
         position: absolute;
@@ -806,6 +823,15 @@ html {
 
     .repos img {
         width: 8vw;
+        transition: 0.5s;
+    }
+
+    .repos img:hover {
+        transform: scale(1.2);
+    }
+
+    .repos img:active {
+        transform: scale(0.8);
     }
 
     .repos a {
@@ -890,6 +916,7 @@ html {
 
     .project-image img {
         max-width: 95%;
+        max-height: 35vh;
         margin-top: 1rem;
         margin-bottom: 0.5rem;
         object-fit: contain;
@@ -903,7 +930,7 @@ html {
         color: var(--accent);
         text-align: left;
         left: 71%;
-        font-size: 5vw;
+        font-size: 4vw;
         font-weight: 700;
         line-height: 1.2;
         position: absolute;
@@ -930,6 +957,15 @@ html {
 
     .repos img {
         width: 8vw;
+        transition: 0.5s;
+    }
+
+    .repos img:hover {
+        transform: scale(1.2);
+    }
+
+    .repos img:active {
+        transform: scale(0.8);
     }
 
     .repos a {
@@ -1012,6 +1048,7 @@ html {
 
     .project-image img {
         max-width: 95%;
+        max-height: 40vh;
         margin-top: 1rem;
         margin-bottom: 0.5rem;
         object-fit: contain;
@@ -1025,7 +1062,7 @@ html {
         color: var(--accent);
         text-align: left;
         left: 71%;
-        font-size: 5vw;
+        font-size: 4vw;
         font-weight: 700;
         line-height: 1.2;
         position: absolute;
@@ -1052,6 +1089,15 @@ html {
 
     .repos img {
         width: 8vw;
+        transition: 0.5s;
+    }
+
+    .repos img:hover {
+        transform: scale(1.2);
+    }
+
+    .repos img:active {
+        transform: scale(0.8);
     }
 
     .repos a {
@@ -1136,6 +1182,7 @@ html {
 
     .project-image img {
         max-width: 95%;
+        max-height: 40vh;
         margin-top: 1rem;
         margin-bottom: 0.5rem;
         object-fit: contain;
@@ -1150,7 +1197,7 @@ html {
         color: var(--accent);
         text-align: left;
         left: 71%;
-        font-size: 5vw;
+        font-size: 3vw;
         font-weight: 700;
         line-height: 1.2;
         position: absolute;
@@ -1177,6 +1224,15 @@ html {
 
     .repos img {
         width: 8vw;
+        transition: 0.5s;
+    }
+
+    .repos img:hover {
+        transform: scale(1.2);
+    }
+
+    .repos img:active {
+        transform: scale(0.8);
     }
 
     .repos a {
@@ -1261,6 +1317,7 @@ html {
 
     .project-image img {
         max-width: 95%;
+        max-height: 50vh;
         margin-top: 1rem;
         margin-bottom: 0.5rem;
         object-fit: contain;

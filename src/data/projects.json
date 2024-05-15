@@ -6,43 +6,60 @@
         "technologies": "React, Javascript, NodeJS",
         "date": "2022, June",
         "repositories": {
-            "project": "http://rojas-trailers.vercel.app",
+            "website": "http://rojas-trailers.vercel.app",
+            "code": null,
             "frontend": "https://github.com/PatoVW02/rojas-trailers",
             "backend": null
         }
     },
     {
         "id": 2,
-        "name": "Orgsbridge",
-        "description": "Application that connects users with organizations that offer help to kids with certain conditions, providing support, etc. The application allows users to search for organizations that can help them with their needs and allows organizations to get known by the community.",
+        "name": "Movie iOS Application",
+        "description": "Application that lets the user visualize all recent movies and series. It also allows the user to see the details of the movie or series, the cast, the trailer, and the reviews. The user is also able to add those movies or series to their favorites for future use.",
         "technologies": "NodeJS, Express, Swift, MongoDB",
         "date": "2023, September",
         "repositories": {
-            "project": null,
-            "frontend": "https://github.com/PatoVW02/orgsbridge-app",
-            "backend": "https://github.com/PatoVW02/orgsbridge-backend"
+            "website": null,
+            "code": "https://github.com/PatoVW02/MovieApplication",
+            "frontend": null,
+            "backend": null
         }
     },
     {
         "id": 3,
-        "name": "Multiagent Warehouse",
-        "description": "Unity simulation that uses a multi-agent system to manage a warehouse's boxes that are coming in from a conveyor belt utilizing self controlled robots.",
-        "technologies": "Python, Flask, Unity, C#",
-        "date": "2023, October",
+        "name": "SocialConnect",
+        "description": "Application that connects users with organizations that offer help to children with special needs, providing support, guidance to parents, etc. The application allows users to search for organizations that can help them with their needs and allows organizations to get known by the community.",
+        "technologies": "NodeJS, Express, Swift, MongoDB",
+        "date": "2023, September",
         "repositories": {
-            "project": null,
-            "frontend": "https://github.com/PatoVW02/Multi-Agent-Warehouse-System",
+            "website": null,
+            "code": "https://github.com/PatoVW02/SocialConnect",
+            "frontend": null,
             "backend": null
         }
     },
     {
         "id": 4,
+        "name": "Multiagent Warehouse",
+        "description": "Unity simulation that uses a multi-agent system to manage a warehouse's boxes that are coming in from a conveyor belt utilizing self controlled robots.",
+        "technologies": "Python, Flask, Unity, C#",
+        "date": "2023, October",
+        "repositories": {
+            "website": null,
+            "code": "https://github.com/PatoVW02/Multi-Agent-Warehouse-System",
+            "frontend": null,
+            "backend": null
+        }
+    },
+    {
+        "id": 5,
         "name": "Dream Lab System",
-        "description": "Website that allows users to create and manage their own reservations inside a laboratory inside a university. Users are able to reserve a room with a specific equipment for a specific time. The system also allows the admin to manage the users and the reservations.",
+        "description": "Website that allows users to create and manage their own reservations inside a laboratory inside a university using the full power of AI. Users are able to reserve a room with a specific equipment for a specific time. The system also allows the admin to manage the users and the reservations.",
         "technologies": "Python, Fastapi, React, Javascript, Redux, MongoDB",
         "date": "2024, February",
         "repositories": {
-            "project": null,
+            "website": null,
+            "code": null,
             "frontend": "https://github.com/TecFive/DREAM-Lab",
             "backend": "https://github.com/TecFive/backend-dream-lab"
         }
