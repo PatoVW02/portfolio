@@ -667,10 +667,13 @@
 
     .project-image {
         flex: 1;
+        margin-left: 2vw;
+        margin-right: 2vw;
+        align-content: center;
     }
 
     .project-image img {
-        height: 27vh;
+        height: 20vh;
         border-radius: 1rem;
         border: 0.1vh solid white;
         cursor: pointer;
@@ -782,6 +785,9 @@
 
     .project-image {
         flex: 1;
+        margin-left: 2vw;
+        margin-right: 2vw;
+        align-content: center;
     }
 
     .project-image img {
@@ -881,8 +887,8 @@
         margin-bottom: 5vh;
         padding-top: 5vh;
         padding-bottom: 5vh;
-        margin-right: 5vw;
-        margin-left: 5vw;
+        margin-right: 8vw;
+        margin-left: 8vw;
         border-radius: 1rem;
         align-items: stretch;
         transition: 0.5s;
@@ -895,10 +901,13 @@
 
     .project-image {
         flex: 1;
+        margin-left: 2vw;
+        margin-right: 2vw;
+        align-content: center;
     }
 
     .project-image img {
-        height: 30vh;
+        height: 27vh;
         border-radius: 1rem;
         border: 0.1vh solid white;
         cursor: pointer;
