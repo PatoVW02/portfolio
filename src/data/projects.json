@@ -6,18 +6,11 @@
         "technologies": [
             {
                 "name": "React",
-                "icon": "react.svg",
-                "color": "rgb(34, 161, 196, 0.7)"
+                "icon": "react.svg"
             },
             {
-                "name": "Javascript",
-                "icon": "javascript.svg",
-                "color": "rgb(247, 223, 30, 0.7)"
-            },
-            {
-                "name": "NodeJS",
-                "icon": "nodejs.svg",
-                "color": "rgb(51, 153, 51, 0.7)"
+                "name": "Bootstrap",
+                "icon": "bootstrap.svg"
             }
         ],
         "date": "2022, June",
@@ -40,24 +33,16 @@
         "description": "Application that lets the user visualize all recent movies and series. It also allows the user to see the details of the movie or series, the cast, the trailer, and the reviews. The user is also able to add those movies or series to their favorites for future use.",
         "technologies": [
             {
-                "name": "NodeJS",
-                "icon": "nodejs.svg",
-                "color": "rgb(51, 153, 51, 0.7)"
-            },
-            {
                 "name": "Express",
-                "icon": "express.svg",
-                "color": "rgb(80, 80, 80, 0.7)"
+                "icon": "express.svg"
             },
             {
                 "name": "Swift",
-                "icon": "swift.svg",
-                "color": "rgb(250, 115, 67, 0.7)"
+                "icon": "swift.svg"
             },
             {
                 "name": "MongoDB",
-                "icon": "mongo.svg",
-                "color": "rgb(78, 124, 52, 0.7)"
+                "icon": "mongo.svg"
             }
         ],
         "date": "2023, September",
@@ -75,24 +60,16 @@
         "description": "Application that connects users with organizations that offer help to children with special needs, providing support, guidance to parents, etc. The application allows users to search for organizations that can help them with their needs and allows organizations to get known by the community.",
         "technologies": [
             {
-                "name": "NodeJS",
-                "icon": "nodejs.svg",
-                "color": "rgb(51, 153, 51, 0.7)"
-            },
-            {
                 "name": "Express",
-                "icon": "express.svg",
-                "color": "rgb(80, 80, 80, 0.7)"
+                "icon": "express.svg"
             },
             {
                 "name": "Swift",
-                "icon": "swift.svg",
-                "color": "rgb(250, 115, 67, 0.7)"
+                "icon": "swift.svg"
             },
             {
                 "name": "MongoDB",
-                "icon": "mongo.svg",
-                "color": "rgb(78, 124, 52, 0.7)"
+                "icon": "mongo.svg"
             }
         ],
         "date": "2023, September",
@@ -110,24 +87,16 @@
         "description": "Unity simulation that uses a multi-agent system to manage a warehouse's boxes that are coming in from a conveyor belt utilizing self controlled robots.",
         "technologies": [
             {
-                "name": "Python",
-                "icon": "python.svg",
-                "color": "rgb(37, 76, 171, 0.7)"
-            },
-            {
                 "name": "Flask",
-                "icon": "flask.svg",
-                "color": "rgb(90, 90, 90, 0.7)"
+                "icon": "flask.svg"
             },
             {
                 "name": "Unity",
-                "icon": "unity.svg",
-                "color": "rgb(59, 77, 96, 0.7)"
+                "icon": "unity.svg"
             },
             {
                 "name": "C#",
-                "icon": "c-sharp.svg",
-                "color": "rgb(78, 39, 142, 0.7)"
+                "icon": "c-sharp.svg"
             }
         ],
         "date": "2023, October",
@@ -145,34 +114,20 @@
         "description": "Website that allows users to create and manage their own reservations inside a laboratory inside a university using the full power of AI. Users are able to reserve a room with a specific equipment for a specific time. The system also allows the admin to manage the users and the reservations.",
         "technologies": [
             {
-                "name": "Python",
-                "icon": "python.svg",
-                "color": "rgb(37, 76, 171, 0.7)"
-            },
-            {
                 "name": "Fastapi",
-                "icon": "fastapi.svg",
-                "color": "rgb(0, 113, 101, 0.7)"
+                "icon": "fastapi.svg"
             },
             {
                 "name": "React",
-                "icon": "react.svg",
-                "color": "rgb(34, 161, 196, 0.7)"
-            },
-            {
-                "name": "Javascript",
-                "icon": "javascript.svg",
-                "color": "rgb(247, 223, 30, 0.7)"
+                "icon": "react.svg"
             },
             {
                 "name": "Redux",
-                "icon": "redux.svg",
-                "color": "rgb(50, 13, 114, 0.7)"
+                "icon": "redux.svg"
             },
             {
                 "name": "MongoDB",
-                "icon": "mongo.svg",
-                "color": "rgb(78, 124, 52, 0.7)"
+                "icon": "mongo.svg"
             }
         ],
         "date": "2024, February",

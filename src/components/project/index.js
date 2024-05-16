@@ -9,12 +9,7 @@ const Project = ({ project }) => (
 
             <ul>
                 {project.technologies.map((tech, index) => (
-                    <li
-                        key={index}
-                        style={{
-                            backgroundColor: tech.color
-                        }}
-                    >
+                    <li key={index}>
                         <img src={require(`../../assets/icons/${tech.icon}`)} alt={tech.name} />
                         {tech.name}
                     </li>
