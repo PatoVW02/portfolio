@@ -35,7 +35,7 @@ const Home = ({ projectsRef, contactRef }) => {
                         <Typewriter
                             id="typewriter"
                             options={{
-                                strings: ["I'm a fullstack developer", "Building websites and applications", "Based in Monterrey, Mexico"],
+                                strings: ["Building seemless digital experiences", "I'm a fullstack developer", "Building websites and applications", "Based in Monterrey, Mexico", "Passionate software developer", "Tech enthusiast"],
                                 autoStart: true,
                                 loop: true,
                             }}
@@ -43,10 +43,10 @@ const Home = ({ projectsRef, contactRef }) => {
 
                         <div className="descriptions-container">
                             <p className="description-1">
-                                I have experience working with different technologies and frameworks such as <b>React</b>, <b>Node.js</b>, <b>Express</b>, <b>MongoDB</b>, <b>Swift</b>, <b>Python</b>, <b>Fastapi</b>, <b>.NET</b> and <b>C#</b>.
+                                At 21 and studying Computer Science, I am passionate about creating seamless digital experiences. Specialized in fullstack development, I have experience in building websites and applications.
                             </p>
                             <p className="description-2">
-                                I'm always looking for new challenges and opportunities to learn and grow as a developer.
+                                I am committed to continuous learning, constantly seeking opportunities to expand my skills and knowledge.
                             </p>
                         </div>
 

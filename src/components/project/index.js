@@ -1,7 +1,7 @@
 const Project = ({ project }) => (
     <div className="project-container">
         <div className="project-image">
-            <img src={require(`../../assets/project${project.id}.png`)} alt="Project" />
+            <img src={require(`../../assets/projects/project${project.id}.png`)} alt="Project" />
         </div>
 
         <div className="project-content">

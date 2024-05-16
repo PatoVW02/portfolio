@@ -16,7 +16,7 @@ const Projects = ({ projectsRef }) => {
                     transition: { duration: 1 }
                 }}
             >
-                {'< '}My Work{' />'}
+                {'< '}Projects{' />'}
             </m.h3>
             <div className="projects-content">
                 {projectsData.map(project => (
