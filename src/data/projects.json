@@ -111,7 +111,7 @@
     {
         "id": 5,
         "name": "Dream Lab System",
-        "description": "Website that allows users to create and manage their own reservations inside a laboratory inside a university using the full power of AI. Users are able to reserve a room with a specific equipment for a specific time. The system also allows the admin to manage the users and the reservations.",
+        "description": "Website that allows users to create and manage their own reservations inside a laboratory of a university using the full power of AI. Users are able to reserve a room with a specific equipment for a specific time. The system also allows the admin to manage the users and the reservations.",
         "technologies": [
             {
                 "name": "Fastapi",
