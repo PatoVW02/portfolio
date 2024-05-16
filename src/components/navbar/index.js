@@ -4,6 +4,7 @@ import { SocialIcon } from 'react-social-icons';
 import { List, ArrowLeft } from 'react-bootstrap-icons';
 
 import useWindowDimensions from '../../hooks/useWindowDimensions';
+import CVDoc from '../../assets/Patricio Villarreal Welsh.pdf';
 
 import "../../styles/Navbar.css";
 
@@ -40,7 +41,11 @@ const Navbar = ({ projectsRef, contactRef }) => {
         <>
             {width >= 1024 ? (
                 <div className={isScrolled ? "navbar-container scrolled" : "navbar-container"}>
-                    <div className="spacer"></div>
+                    <div className="spacer">
+                        <a href={CVDoc} download="Patricio Villarreal Welsh" target='_blank' rel="noreferrer">
+                            <button className="cv-button">Download CV</button>
+                        </a>
+                    </div>
                     <nav className="navbar-items">
                         <ul>
                             <li><a href="#">Home</a></li>
@@ -74,6 +79,10 @@ const Navbar = ({ projectsRef, contactRef }) => {
                                         <li><a href="#" onClick={executeProjectsScroll}>Projects</a></li>
                                         <li><a href="#" onClick={executeContactScroll}>Contact</a></li>
                                     </ul>
+
+                                    <a href={CVDoc} download="Patricio Villarreal Welsh" target='_blank' rel="noreferrer">
+                                        <button className="cv-button-mobile">Download CV</button>
+                                    </a>
                                 </div>
                             </div>
                         )}

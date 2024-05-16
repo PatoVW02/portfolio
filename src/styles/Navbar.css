@@ -174,8 +174,7 @@ nav ul li a:hover {
 .mobile-navbar-items ul {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items: left;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -189,4 +188,39 @@ nav ul li a:hover {
     color: white;
     text-decoration: none;
     font-size: 1.5rem;
+}
+
+.spacer a {
+    color: white;
+    text-decoration: none;
+}
+
+.cv-button {
+    padding: 0.6vw;
+    background-color: transparent;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    cursor: pointer;
+    border-radius: 1rem;
+    transition: 0.5s;
+}
+
+.cv-button:hover {
+    background-color: rgb(76, 76, 76);
+    transform: scale(1.1);
+}
+
+.cv-button:active {
+    transform: scale(0.9);
+}
+
+.cv-button-mobile {
+    margin-top: 7vh;
+    color: white;
+    font-size: 4vw;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
 }
