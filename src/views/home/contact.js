@@ -33,7 +33,7 @@ const Contact = ({ contactRef }) => {
                 <div className="contact-info">
                     <div className="email-caption">
                         Get in touch
-                        <span className="email-caption-light">
+                        <span className="email-caption-light" onClick={copyEmail}>
                             {' (click to copy)'}
                         </span>
                     </div>
