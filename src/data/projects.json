@@ -3,65 +3,190 @@
         "id": 1,
         "name": "Rojas Trailers",
         "description": "Landing page for a trailer company that offers different services involving trailers. The website allows users to see the services that the company offers, the trailers that they have available, and the contact information. The website also allows users to contact the company through a form.",
-        "technologies": "React, Javascript, NodeJS",
+        "technologies": [
+            {
+                "name": "React",
+                "icon": "react.svg",
+                "color": "rgb(34, 161, 196, 0.7)"
+            },
+            {
+                "name": "Javascript",
+                "icon": "javascript.svg",
+                "color": "rgb(247, 223, 30, 0.7)"
+            },
+            {
+                "name": "NodeJS",
+                "icon": "nodejs.svg",
+                "color": "rgb(51, 153, 51, 0.7)"
+            }
+        ],
         "date": "2022, June",
-        "repositories": {
-            "website": "http://rojas-trailers.vercel.app",
-            "code": null,
-            "frontend": "https://github.com/PatoVW02/rojas-trailers",
-            "backend": null
-        }
+        "links": [
+            {
+                "name": "Website",
+                "icon": "website.svg",
+                "url": "http://rojas-trailers.vercel.app"
+            },
+            {
+                "name": "Frontend",
+                "icon": "github.svg",
+                "url": "https://github.com/PatoVW02/rojas-trailers"
+            }
+        ]
     },
     {
         "id": 2,
         "name": "Movie iOS Application",
         "description": "Application that lets the user visualize all recent movies and series. It also allows the user to see the details of the movie or series, the cast, the trailer, and the reviews. The user is also able to add those movies or series to their favorites for future use.",
-        "technologies": "NodeJS, Express, Swift, MongoDB",
+        "technologies": [
+            {
+                "name": "NodeJS",
+                "icon": "nodejs.svg",
+                "color": "rgb(51, 153, 51, 0.7)"
+            },
+            {
+                "name": "Express",
+                "icon": "express.svg",
+                "color": "rgb(80, 80, 80, 0.7)"
+            },
+            {
+                "name": "Swift",
+                "icon": "swift.svg",
+                "color": "rgb(250, 115, 67, 0.7)"
+            },
+            {
+                "name": "MongoDB",
+                "icon": "mongo.svg",
+                "color": "rgb(78, 124, 52, 0.7)"
+            }
+        ],
         "date": "2023, September",
-        "repositories": {
-            "website": null,
-            "code": "https://github.com/PatoVW02/MovieApplication",
-            "frontend": null,
-            "backend": null
-        }
+        "links": [
+            {
+                "name": "Code",
+                "icon": "github.svg",
+                "url": "https://github.com/PatoVW02/MovieApplication"
+            }
+        ]
     },
     {
         "id": 3,
         "name": "SocialConnect",
         "description": "Application that connects users with organizations that offer help to children with special needs, providing support, guidance to parents, etc. The application allows users to search for organizations that can help them with their needs and allows organizations to get known by the community.",
-        "technologies": "NodeJS, Express, Swift, MongoDB",
+        "technologies": [
+            {
+                "name": "NodeJS",
+                "icon": "nodejs.svg",
+                "color": "rgb(51, 153, 51, 0.7)"
+            },
+            {
+                "name": "Express",
+                "icon": "express.svg",
+                "color": "rgb(80, 80, 80, 0.7)"
+            },
+            {
+                "name": "Swift",
+                "icon": "swift.svg",
+                "color": "rgb(250, 115, 67, 0.7)"
+            },
+            {
+                "name": "MongoDB",
+                "icon": "mongo.svg",
+                "color": "rgb(78, 124, 52, 0.7)"
+            }
+        ],
         "date": "2023, September",
-        "repositories": {
-            "website": null,
-            "code": "https://github.com/PatoVW02/SocialConnect",
-            "frontend": null,
-            "backend": null
-        }
+        "links": [
+            {
+                "name": "Code",
+                "icon": "github.svg",
+                "url": "https://github.com/PatoVW02/SocialConnect"
+            }
+        ]
     },
     {
         "id": 4,
         "name": "Multiagent Warehouse",
         "description": "Unity simulation that uses a multi-agent system to manage a warehouse's boxes that are coming in from a conveyor belt utilizing self controlled robots.",
-        "technologies": "Python, Flask, Unity, C#",
+        "technologies": [
+            {
+                "name": "Python",
+                "icon": "python.svg",
+                "color": "rgb(37, 76, 171, 0.7)"
+            },
+            {
+                "name": "Flask",
+                "icon": "flask.svg",
+                "color": "rgb(90, 90, 90, 0.7)"
+            },
+            {
+                "name": "Unity",
+                "icon": "unity.svg",
+                "color": "rgb(59, 77, 96, 0.7)"
+            },
+            {
+                "name": "C#",
+                "icon": "c-sharp.svg",
+                "color": "rgb(78, 39, 142, 0.7)"
+            }
+        ],
         "date": "2023, October",
-        "repositories": {
-            "website": null,
-            "code": "https://github.com/PatoVW02/Multi-Agent-Warehouse-System",
-            "frontend": null,
-            "backend": null
-        }
+        "links": [
+            {
+                "name": "Code",
+                "icon": "github.svg",
+                "url": "https://github.com/PatoVW02/Multi-Agent-Warehouse-System"
+            }
+        ]
     },
     {
         "id": 5,
         "name": "Dream Lab System",
         "description": "Website that allows users to create and manage their own reservations inside a laboratory inside a university using the full power of AI. Users are able to reserve a room with a specific equipment for a specific time. The system also allows the admin to manage the users and the reservations.",
-        "technologies": "Python, Fastapi, React, Javascript, Redux, MongoDB",
+        "technologies": [
+            {
+                "name": "Python",
+                "icon": "python.svg",
+                "color": "rgb(37, 76, 171, 0.7)"
+            },
+            {
+                "name": "Fastapi",
+                "icon": "fastapi.svg",
+                "color": "rgb(0, 113, 101, 0.7)"
+            },
+            {
+                "name": "React",
+                "icon": "react.svg",
+                "color": "rgb(34, 161, 196, 0.7)"
+            },
+            {
+                "name": "Javascript",
+                "icon": "javascript.svg",
+                "color": "rgb(247, 223, 30, 0.7)"
+            },
+            {
+                "name": "Redux",
+                "icon": "redux.svg",
+                "color": "rgb(50, 13, 114, 0.7)"
+            },
+            {
+                "name": "MongoDB",
+                "icon": "mongo.svg",
+                "color": "rgb(78, 124, 52, 0.7)"
+            }
+        ],
         "date": "2024, February",
-        "repositories": {
-            "website": null,
-            "code": null,
-            "frontend": "https://github.com/TecFive/DREAM-Lab",
-            "backend": "https://github.com/TecFive/backend-dream-lab"
-        }
+        "links": [
+            {
+                "name": "Frontend",
+                "icon": "github.svg",
+                "url": "https://github.com/TecFive/DREAM-Lab"
+            },
+            {
+                "name": "Backend",
+                "icon": "github.svg",
+                "url": "https://github.com/TecFive/backend-dream-lab"
+            }
+        ]
     }
 ]

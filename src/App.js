@@ -14,8 +14,8 @@ const App = () => {
     <BrowserRouter>
       <Routes>
           <Route element={<MainLayout projectsRef={projectsRef} contactRef={contactRef} />}>
-          <Route path="/" element={<Home projectsRef={projectsRef} contactRef={contactRef} />} />
-        </Route>
+            <Route path="/" element={<Home projectsRef={projectsRef} contactRef={contactRef} />} />
+          </Route>
       </Routes>
     </BrowserRouter>
   );

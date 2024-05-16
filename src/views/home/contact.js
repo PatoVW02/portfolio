@@ -26,7 +26,7 @@ const Contact = ({ contactRef }) => {
                     transition: { duration: 1 }
                 }}
             >
-                Contact Me
+                {'< '}Contact Me{' />'}
             </m.h3>
 
             <div className="contact-content">
