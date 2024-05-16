@@ -8,7 +8,7 @@ const Contact = ({ contactRef }) => {
     const [isEmailCopied, setIsEmailCopied] = useState(false);
 
     const copyEmail = () => {
-        navigator.clipboard.writeText("patovw@gmail.com");
+        navigator.clipboard.writeText("hey@patovw.com");
         setIsEmailCopied(true);
 
         setTimeout(() => {
@@ -53,7 +53,7 @@ const Contact = ({ contactRef }) => {
                                 transition: { duration: 0 }
                             }}
                         >
-                            patovw@gmail.com
+                            hey@patovw.com
                         </m.span>
                     ) : (
                         <m.div className="email">
