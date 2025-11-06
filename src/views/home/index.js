@@ -43,7 +43,7 @@ const Home = ({ projectsRef, contactRef }) => {
 
                         <div className="descriptions-container">
                             <p className="description-1">
-                                At 21 and studying Computer Science, I am passionate about creating seamless digital experiences. Specialized in fullstack development, I have experience in building websites and applications.
+                                At 23 and a Computer Science graduate, I am passionate about creating seamless digital experiences. Specialized in fullstack development, I have experience in building websites and applications.
                             </p>
                             <p className="description-2">
                                 I am committed to continuous learning, constantly seeking opportunities to expand my skills and knowledge.
