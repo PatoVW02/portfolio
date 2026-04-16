@@ -1,3 +1,10 @@
+:root {
+    --accent: #7dd3fc;
+    --bg-card: rgba(255, 255, 255, 0.05);
+    --bg-card-border: rgba(125, 211, 252, 0.15);
+    --transition: 0.4s ease;
+}
+
 body {
     margin: 0;
     color: white;

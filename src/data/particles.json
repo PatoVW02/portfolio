@@ -18,9 +18,9 @@
     "particles": {
       "line_linked": {
         "enable": true,
-        "color": "#000000",
-        "opacity": 0.6,
-        "width": 1.5,
+        "color": "#7dd3fc",
+        "opacity": 0.5,
+        "width": 1,
         "distance": "150"
       },
       "move": {

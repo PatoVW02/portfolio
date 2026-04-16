@@ -143,5 +143,59 @@
                 "url": "https://github.com/TecFive/backend-dream-lab"
             }
         ]
+    },
+    {
+        "id": 6,
+        "name": "Vectra",
+        "description": "macOS utility application that helps users reclaim disk space by scanning for junk files, caches, logs, temp files, and dev dependencies, and safely deleting them. It follows a freemium model with a free tier (15GB/month cleanup limit) and a paid premium tier for unlimited cleanup.",
+        "technologies": [
+            {
+                "name": "Electron",
+                "icon": "electron.svg"
+            },
+            {
+                "name": "Vite",
+                "icon": "vite.svg"
+            }
+        ],
+        "date": "2024, December",
+        "links": [
+            {
+                "name": "Website",
+                "icon": "website.svg",
+                "url": "https://vectra-mu.vercel.app/"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Activo",
+        "description": "E-commerce ERP that centralizes product, inventory, and order management across multiple marketplaces — Shopify, Mercado Libre, Amazon, and TikTok — into a single platform. It handles the full sales cycle from stock control to invoicing.",
+        "technologies": [
+            {
+                "name": "React",
+                "icon": "react.svg"
+            },
+            {
+                "name": "Tailwind CSS",
+                "icon": "tailwind.svg"
+            },
+            {
+                "name": "FastAPI",
+                "icon": "fastapi.svg"
+            },
+            {
+                "name": "Python",
+                "icon": "python.svg"
+            }
+        ],
+        "date": "2025, March",
+        "links": [
+            {
+                "name": "Website",
+                "icon": "website.svg",
+                "url": "https://activo.dev/"
+            }
+        ]
     }
 ]

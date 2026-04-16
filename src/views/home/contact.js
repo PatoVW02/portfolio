@@ -44,12 +44,12 @@ const Contact = ({ contactRef }) => {
                             onClick={copyEmail}
                             whileHover={{
                                 scale: 1.1,
-                                color: "#cfcfcf",
+                                color: "#38bdf8",
                                 transition: { duration: 0 }
                             }}
                             whileTap={{
                                 scale: 0.8,
-                                color: "white",
+                                color: "#38bdf8",
                                 transition: { duration: 0 }
                             }}
                         >

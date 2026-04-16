@@ -9,9 +9,11 @@
     justify-content: space-between;
     align-items: center;
     margin: 0;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    background-color: rgba(43, 43, 43, 0.5);
+    padding-top: 0.6%;
+    padding-bottom: 0.6%;
+    background-color: rgba(10, 22, 40, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     color: white;
     position: fixed;
     top: 0;
@@ -19,10 +21,13 @@
     right: 0;
     z-index: 1000;
     transition: 0.5s;
+    border-bottom: 1px solid rgba(125, 211, 252, 0.12);
 }
 
 .navbar-container.scrolled {
-    background-color: rgba(43, 43, 43, 1);
+    background-color: rgba(10, 22, 40, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     margin: 0;
     padding-top: 0;
     padding-bottom: 0;
@@ -58,7 +63,7 @@ nav ul li a:before {
 }
 
 nav ul li a:hover {
-    color: #b6b6b6;
+    color: #7dd3fc;
 }
 
 /* navbar-items */
@@ -81,7 +86,7 @@ nav ul li a:hover {
     width: 0%;
     content: '.';
     color: transparent;
-    background: #b6b6b6;
+    background: #7dd3fc;
     height: 0.1rem;
 }
 
@@ -96,19 +101,17 @@ nav ul li a:hover {
     margin-right: 5%;
 }
 
-
-
 .open-drawer-menu {
     display: flex;
     justify-content: space-between;
     font-size: 3rem;
-    background-color: rgba(43, 43, 43, 0.9);
+    background-color: rgba(10, 22, 40, 0.9);
     padding-bottom: 2%;
 }
 
 .open-drawer-menu.scrolled {
     font-size: 2rem;
-    background-color: rgba(43, 43, 43, 1);
+    background-color: rgba(10, 22, 40, 1);
     padding-bottom: 1%;
     transition: 0.3s;
 }
@@ -139,13 +142,14 @@ nav ul li a:hover {
 .mobile-navbar-items {
     display: flex;
     flex-direction: grid;
-    background-color: rgba(43, 43, 43, 1);
+    background-color: rgba(10, 22, 40, 0.98);
     margin-left: auto;
     margin-right: 0;
     width: 40%;
     height: 100vh;
     transition: 0.5s ease-in-out;
     z-index: 1;
+    border-left: 1px solid rgba(125, 211, 252, 0.15);
 }
 
 .mobile-navbar-items:after {
@@ -155,7 +159,7 @@ nav ul li a:hover {
     right: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(43, 43, 43, 0.5);
+    background-color: rgba(10, 22, 40, 0.5);
     z-index: -1;
 }
 
@@ -208,7 +212,8 @@ nav ul li a:hover {
 }
 
 .cv-button:hover {
-    background-color: rgb(76, 76, 76);
+    background-color: rgba(125, 211, 252, 0.15);
+    color: #7dd3fc;
     transform: scale(1.1);
 }
 

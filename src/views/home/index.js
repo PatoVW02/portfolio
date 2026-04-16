@@ -1,8 +1,6 @@
 import Typewriter from 'typewriter-effect';
 import { ArrowDownCircle } from 'react-bootstrap-icons';
 import { LazyMotion, domAnimation, m } from 'framer-motion';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-
 import Projects from './projects';
 import Contact from './contact';
 
