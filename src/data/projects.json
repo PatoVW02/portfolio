@@ -147,7 +147,7 @@
     {
         "id": 6,
         "name": "Activo",
-        "description": "E-commerce ERP that centralizes product, inventory, and order management across multiple marketplaces — Shopify, Mercado Libre, Amazon, and TikTok — into a single platform. It handles the full sales cycle from stock control to invoicing.",
+        "description": "E-commerce ERP that centralizes product, inventory, and order management across multiple marketplaces, Shopify, Mercado Libre, Amazon, and TikTok, into a single platform. It handles the full sales cycle from stock control to invoicing.",
         "technologies": [
             {
                 "name": "React",
