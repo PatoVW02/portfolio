@@ -177,7 +177,7 @@
     },
     {
         "id": 7,
-        "name": "Vectra",
+        "name": "Nerion",
         "description": "macOS utility application that helps users reclaim disk space by scanning for junk files, caches, logs, temp files, and dev dependencies, and safely deleting them. It follows a freemium model with a free tier (15GB/month cleanup limit) and a paid premium tier for unlimited cleanup.",
         "technologies": [
             {
@@ -194,7 +194,7 @@
             {
                 "name": "Website",
                 "icon": "website.svg",
-                "url": "https://vectra-mu.vercel.app/"
+                "url": "https://nerionapp.com/"
             }
         ]
     }
