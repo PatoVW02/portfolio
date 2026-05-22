@@ -189,12 +189,105 @@
                 "icon": "vite.svg"
             }
         ],
-        "date": "2024, December",
+        "date": "2026, March",
         "links": [
             {
                 "name": "Website",
                 "icon": "website.svg",
                 "url": "https://nerionapp.com/"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Duskry",
+        "description": "Automatic time-tracking desktop app for macOS and Windows that runs in the background tracking active windows and idle time. Organizes activity into a project-based timeline with auto-rules, reports, and a Pro billing flow, built as a monorepo with a Tauri desktop app and a separate Next.js landing page.",
+        "technologies": [
+            {
+                "name": "Tauri",
+                "icon": "tauri.svg"
+            },
+            {
+                "name": "React",
+                "icon": "react.svg"
+            },
+            {
+                "name": "TypeScript",
+                "icon": "typescript.svg"
+            },
+            {
+                "name": "Tailwind CSS",
+                "icon": "tailwind.svg"
+            }
+        ],
+        "date": "2026, April",
+        "links": [
+            {
+                "name": "Website",
+                "icon": "website.svg",
+                "url": "https://duskry.com"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Starflight",
+        "description": "Single-page 3D universe explorer that renders real star data using Three.js and custom GLSL shaders for star sprites, procedurally generated nebulae, galaxies, and a cosmic web stretching to ~4 billion light years. Users can search any catalogued star by name, warp to it with an eased animation, and freely navigate with orbit controls and WASD flight.",
+        "technologies": [
+            {
+                "name": "JavaScript",
+                "icon": "javascript.svg"
+            },
+            {
+                "name": "Three.js",
+                "icon": "threejs.svg"
+            },
+            {
+                "name": "Python",
+                "icon": "python.svg"
+            },
+            {
+                "name": "FastAPI",
+                "icon": "fastapi.svg"
+            }
+        ],
+        "date": "2026, May",
+        "links": [
+            {
+                "name": "Website",
+                "icon": "website.svg",
+                "url": "https://starflight-frontend.vercel.app"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Medlink",
+        "description": "Practice management platform that helps doctors automate appointment scheduling, patient reminders, and medical record storage. Patients can book appointments online 24/7, receive automatic reminders to reduce no-shows, and securely access their medical history through a simple patient portal.",
+        "technologies": [
+            {
+                "name": "Next.js",
+                "icon": "nextjs.svg"
+            },
+            {
+                "name": "React",
+                "icon": "react.svg"
+            },
+            {
+                "name": "FastAPI",
+                "icon": "fastapi.svg"
+            },
+            {
+                "name": "Python",
+                "icon": "python.svg"
+            }
+        ],
+        "date": "2025, November",
+        "links": [
+            {
+                "name": "Website",
+                "icon": "website.svg",
+                "url": "https://www.medlink.com.mx/"
             }
         ]
     }

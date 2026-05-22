@@ -8,12 +8,17 @@ import "../../styles/Projects.css"
 
 const FEATURED_IDS = [6, 7];
 
+const parseDate = (dateStr) => {
+    const [year, month] = dateStr.split(', ');
+    return new Date(`${month} 1, ${year}`);
+};
+
 const Projects = ({ projectsRef }) => {
     const [activeTab, setActiveTab] = useState('featured');
 
     const visibleProjects = activeTab === 'featured'
         ? projectsData.filter(p => FEATURED_IDS.includes(p.id))
-        : projectsData;
+        : [...projectsData].sort((a, b) => parseDate(b.date) - parseDate(a.date));
 
     return (
         <>
