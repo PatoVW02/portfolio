@@ -3,16 +3,12 @@ import { m } from 'framer-motion';
 
 import Project from '../../components/project';
 import projectsData from "../../data/projects.json";
+import { sortNewestFirst } from '../../utils/projects';
 
 import "../../styles/Projects.css"
 
 // Order here is the order shown on the Featured tab.
 const FEATURED_IDS = [11, 12, 6, 7];
-
-const parseDate = (dateStr) => {
-    const [year, month] = dateStr.split(', ');
-    return new Date(`${month} 1, ${year}`);
-};
 
 const Projects = ({ projectsRef }) => {
     const [activeTab, setActiveTab] = useState('featured');
@@ -21,7 +17,7 @@ const Projects = ({ projectsRef }) => {
         ? projectsData
             .filter(p => FEATURED_IDS.includes(p.id))
             .sort((a, b) => FEATURED_IDS.indexOf(a.id) - FEATURED_IDS.indexOf(b.id))
-        : [...projectsData].sort((a, b) => parseDate(b.date) - parseDate(a.date));
+        : sortNewestFirst(projectsData);
 
     return (
         <section className="section projects" ref={projectsRef} id="projects">

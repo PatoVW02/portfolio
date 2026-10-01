@@ -1,215 +1,293 @@
-import { useEffect, useRef } from 'react';
-import * as THREE from 'three';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import {
+    m,
+    useMotionValue,
+    useMotionValueEvent,
+    useReducedMotion,
+    useScroll,
+    useSpring,
+    useTransform,
+} from 'framer-motion';
+
+import projectsData from '../../data/projects.json';
+import { sortNewestFirst } from '../../utils/projects';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 
 import '../../styles/Spiral.css';
 
-const ACCENT = 0xffb347;
-const BACKGROUND = 0x0b0b0c;
+const PROJECTS = sortNewestFirst(projectsData);
+const COUNT = PROJECTS.length;
+const STEP = 360 / COUNT;              // degrees between neighbouring cards on the helix
+const RUNWAY_PER_CARD_VH = 42;         // scroll distance that moves the spiral by one card
 
-// Builds a helix whose radius tapers towards both ends so it reads as a coil, not a tube.
-const buildHelix = ({ turns, points, radius, height, taper, phase = 0 }) => {
-    const positions = new Float32Array(points * 3);
+const DEG = Math.PI / 180;
+const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+const lerp = (a, b, mix) => a + (b - a) * mix;
 
-    for (let i = 0; i < points; i++) {
-        const t = i / (points - 1);
-        const angle = phase + t * turns * Math.PI * 2;
-        const edge = Math.abs(t - 0.5) * 2;
-        const r = radius * (1 - taper * edge * edge);
-
-        positions[i * 3] = Math.cos(angle) * r;
-        positions[i * 3 + 1] = (t - 0.5) * height;
-        positions[i * 3 + 2] = Math.sin(angle) * r;
-    }
-
-    const geometry = new THREE.BufferGeometry();
-    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    return geometry;
+// Geometry per breakpoint: helix radius, vertical rise per card, card size.
+const geometryFor = (width) => {
+    if (width < 640) return { radius: 215, rise: 34, cardWidth: 230, cardHeight: 144, perspective: 900 };
+    if (width < 1024) return { radius: 320, rise: 46, cardWidth: 320, cardHeight: 200, perspective: 1100 };
+    return { radius: 520, rise: 64, cardWidth: 420, cardHeight: 262, perspective: 1400 };
 };
 
-// Picks every n-th vertex of a helix so small dots can sit on the wire.
-const sampleVertices = (geometry, every) => {
-    const source = geometry.getAttribute('position');
-    const count = Math.floor(source.count / every);
-    const positions = new Float32Array(count * 3);
+const SpiralCard = ({ project, index, progress, mix, geometry, isActive, onSelect }) => {
+    const { radius, rise, cardHeight } = geometry;
 
-    for (let i = 0; i < count; i++) {
-        positions[i * 3] = source.getX(i * every);
-        positions[i * 3 + 1] = source.getY(i * every);
-        positions[i * 3 + 2] = source.getZ(i * every);
-    }
+    // Everything derives from `t`: how many cards this one sits from the active position.
+    const stepsFromActive = (p) => index - p * (COUNT - 1);
 
-    const sampled = new THREE.BufferGeometry();
-    sampled.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    return sampled;
-};
+    const transform = useTransform([progress, mix], ([p, listMix]) => {
+        const t = stepsFromActive(p);
+        const theta = t * STEP;
+        const rad = theta * DEG;
 
-const Spiral = () => {
-    const canvasRef = useRef(null);
-
-    useEffect(() => {
-        const canvas = canvasRef.current;
-        if (!canvas) return undefined;
-
-        const container = canvas.parentElement;
-        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        let renderer;
-        try {
-            renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: 'low-power' });
-        } catch (error) {
-            // No WebGL: the hero simply renders without the spiral.
-            return undefined;
-        }
-
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-        renderer.setClearColor(0x000000, 0);
-
-        const scene = new THREE.Scene();
-        scene.fog = new THREE.Fog(BACKGROUND, 4.5, 9.5);
-
-        const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 50);
-        camera.position.set(0, 0, 6.5);
-
-        const group = new THREE.Group();
-        scene.add(group);
-
-        const outerGeometry = buildHelix({ turns: 6, points: 720, radius: 1.55, height: 5.2, taper: 0.55 });
-        const innerGeometry = buildHelix({ turns: 6, points: 720, radius: 1.1, height: 5.2, taper: 0.55, phase: Math.PI });
-        const dotsGeometry = sampleVertices(outerGeometry, 9);
-
-        const outerMaterial = new THREE.LineBasicMaterial({
-            color: ACCENT,
-            transparent: true,
-            opacity: 0.6,
-            blending: THREE.AdditiveBlending,
-            depthWrite: false,
-        });
-        const innerMaterial = new THREE.LineBasicMaterial({
-            color: 0xf2f2f0,
-            transparent: true,
-            opacity: 0.18,
-            blending: THREE.AdditiveBlending,
-            depthWrite: false,
-        });
-        const dotsMaterial = new THREE.PointsMaterial({
-            color: ACCENT,
-            size: 0.035,
-            transparent: true,
-            opacity: 0.9,
-            sizeAttenuation: true,
-            depthWrite: false,
-        });
-
-        const outer = new THREE.Line(outerGeometry, outerMaterial);
-        const inner = new THREE.Line(innerGeometry, innerMaterial);
-        const dots = new THREE.Points(dotsGeometry, dotsMaterial);
-        group.add(outer, inner, dots);
-
-        const BASE_LEAN = -0.55;
-        group.rotation.z = BASE_LEAN;
-        group.rotation.x = 0.15;
-
-        const pointer = { x: 0, y: 0 };
-        const target = { x: 0.15, z: BASE_LEAN };
-        let spin = 0;
-        let frame = 0;
-        let visible = true;
-        let lastTime = performance.now();
-
-        const resize = () => {
-            const width = container.clientWidth || window.innerWidth;
-            const height = container.clientHeight || window.innerHeight;
-            renderer.setSize(width, height, false);
-            camera.aspect = width / height;
-            camera.updateProjectionMatrix();
-
-            // On wide screens the coil sits to the right of the text; on phones it sits behind it.
-            const wide = width / height > 1;
-            group.position.x = wide ? 1.7 : 0;
-            group.scale.setScalar(wide ? 1 : 0.8);
-            outerMaterial.opacity = wide ? 0.6 : 0.4;
-            innerMaterial.opacity = wide ? 0.18 : 0.12;
+        // Helix placement: front card at z = 0, others wind up and back around the axis.
+        const spiral = {
+            x: Math.sin(rad) * radius,
+            y: -t * rise,
+            z: Math.cos(rad) * radius - radius,
+            rotate: theta,
+            scale: 1 + 0.08 * Math.max(0, 1 - Math.abs(t)),
         };
 
-        const render = () => {
-            renderer.render(scene, camera);
+        // List placement: a vertical filmstrip that shrinks away from the centre.
+        const list = {
+            x: 0,
+            y: t * (cardHeight * 0.9 + 24),
+            z: 0,
+            rotate: 0,
+            scale: 1 - Math.min(Math.abs(t), 4) * 0.1,
         };
 
-        const step = (now) => {
-            const delta = Math.min((now - lastTime) / 1000, 0.05);
-            lastTime = now;
+        const x = lerp(spiral.x, list.x, listMix);
+        const y = lerp(spiral.y, list.y, listMix);
+        const z = lerp(spiral.z, list.z, listMix);
+        const rotate = lerp(spiral.rotate, list.rotate, listMix);
+        const scale = lerp(spiral.scale, list.scale, listMix);
 
-            const scroll = Math.min(window.scrollY / Math.max(window.innerHeight, 1), 1);
+        return `translate3d(${x}px, ${y}px, ${z}px) rotateY(${rotate}deg) scale(${scale})`;
+    });
 
-            spin += delta * 0.32;
-            group.rotation.y = spin + scroll * 1.4;
+    const opacity = useTransform([progress, mix], ([p, listMix]) => {
+        const t = stepsFromActive(p);
+        const theta = Math.abs(t * STEP);
+        // Past cards (left side) fade sooner than upcoming ones so the headline stays readable.
+        const limit = t < 0 ? 105 : 150;
+        const spiralOpacity = theta <= 60 ? 1 : clamp(1 - (theta - 60) / (limit - 60), 0, 1);
+        // In list mode the cards above (already seen) fade faster than the ones still to come.
+        const listOpacity = t < 0
+            ? clamp(1 - (Math.abs(t) - 0.6) / 0.8, 0, 1)
+            : clamp(1 - (t - 0.9) / 1.1, 0, 1);
+        return lerp(spiralOpacity, listOpacity, listMix);
+    });
 
-            target.x = 0.15 + pointer.y * 0.25;
-            target.z = BASE_LEAN + pointer.x * 0.18;
-            group.rotation.x += (target.x - group.rotation.x) * 0.045;
-            group.rotation.z += (target.z - group.rotation.z) * 0.045;
+    const filter = useTransform([progress, mix], ([p, listMix]) => {
+        const t = Math.abs(stepsFromActive(p));
+        const brightness = lerp(clamp(1 - t * 0.12, 0.45, 1), clamp(1 - t * 0.15, 0.5, 1), listMix);
+        return `brightness(${brightness})`;
+    });
 
-            group.position.y = -scroll * 1.6;
-            group.position.z = -scroll * 2.2;
+    const visibility = useTransform(opacity, (value) => (value <= 0.01 ? 'hidden' : 'visible'));
 
-            render();
-            frame = requestAnimationFrame(step);
-        };
-
-        const start = () => {
-            if (frame || reducedMotion) return;
-            lastTime = performance.now();
-            frame = requestAnimationFrame(step);
-        };
-
-        const stop = () => {
-            if (!frame) return;
-            cancelAnimationFrame(frame);
-            frame = 0;
-        };
-
-        const onPointerMove = (event) => {
-            pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
-            pointer.y = (event.clientY / window.innerHeight) * 2 - 1;
-        };
-
-        const onResize = () => {
-            resize();
-            if (reducedMotion) render();
-        };
-
-        const observer = new IntersectionObserver(([entry]) => {
-            visible = entry.isIntersecting;
-            if (visible) start(); else stop();
-        }, { threshold: 0 });
-
-        resize();
-        render();
-        observer.observe(container);
-        window.addEventListener('resize', onResize);
-        if (!reducedMotion) window.addEventListener('pointermove', onPointerMove, { passive: true });
-
-        return () => {
-            stop();
-            observer.disconnect();
-            window.removeEventListener('resize', onResize);
-            window.removeEventListener('pointermove', onPointerMove);
-
-            outerGeometry.dispose();
-            innerGeometry.dispose();
-            dotsGeometry.dispose();
-            outerMaterial.dispose();
-            innerMaterial.dispose();
-            dotsMaterial.dispose();
-            renderer.dispose();
-        };
-    }, []);
+    const link = project.links[0];
 
     return (
-        <div className="spiral" aria-hidden="true">
-            <canvas ref={canvasRef} className="spiral-canvas" />
-        </div>
+        <m.div
+            className={`spiral-card ${isActive ? 'active' : ''}`}
+            style={{
+                transform,
+                opacity,
+                filter,
+                visibility,
+                width: geometry.cardWidth,
+                height: cardHeight,
+                marginLeft: -geometry.cardWidth / 2,
+                marginTop: -cardHeight / 2,
+            }}
+            onClick={() => onSelect(index)}
+            role="button"
+            tabIndex={-1}
+            aria-label={isActive && link ? `Open ${project.name}` : `Show ${project.name}`}
+            aria-hidden={!isActive}
+        >
+            <img
+                src={require(`../../assets/projects/project${project.id}.png`)}
+                alt=""
+                draggable="false"
+            />
+            <span className="spiral-card-index">{String(index + 1).padStart(2, '0')}</span>
+            <span className="spiral-card-year">{project.date.split(',')[0]}</span>
+            <span className="spiral-card-name">{project.name}</span>
+        </m.div>
     );
 };
 
-export default Spiral;
+const ProjectSpiral = ({ projectsRef, children }) => {
+    const sectionRef = useRef(null);
+    const stageRef = useRef(null);
+    const { width } = useWindowDimensions();
+    const geometry = useMemo(() => geometryFor(width), [width]);
+    const reducedMotion = useReducedMotion();
+
+    const [mode, setMode] = useState('spiral');
+    const [active, setActive] = useState(0);
+
+    const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end end'] });
+    const smoothProgress = useSpring(scrollYProgress, { stiffness: 90, damping: 24, mass: 0.5 });
+    const progress = reducedMotion ? scrollYProgress : smoothProgress;
+
+    // 0 = spiral layout, 1 = list layout; animated so the cards glide between the two.
+    const modeValue = useMotionValue(0);
+    const smoothMode = useSpring(modeValue, { stiffness: 120, damping: 22 });
+    const mix = reducedMotion ? modeValue : smoothMode;
+
+    useEffect(() => {
+        modeValue.set(mode === 'list' ? 1 : 0);
+    }, [mode, modeValue]);
+
+    useMotionValueEvent(scrollYProgress, 'change', (value) => {
+        setActive(clamp(Math.round(value * (COUNT - 1)), 0, COUNT - 1));
+    });
+
+    const scrollToIndex = useCallback((index) => {
+        const section = sectionRef.current;
+        if (!section) return;
+        const top = section.getBoundingClientRect().top + window.scrollY;
+        const runway = section.offsetHeight - window.innerHeight;
+        const target = top + (clamp(index, 0, COUNT - 1) / (COUNT - 1)) * runway;
+        window.scrollTo({ top: target, behavior: reducedMotion ? 'auto' : 'smooth' });
+    }, [reducedMotion]);
+
+    const handleSelect = useCallback((index) => {
+        if (index === active) {
+            const link = PROJECTS[index].links[0];
+            if (link) window.open(link.url, '_blank', 'noopener,noreferrer');
+            return;
+        }
+        scrollToIndex(index);
+    }, [active, scrollToIndex]);
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+            event.preventDefault();
+            scrollToIndex(active + 1);
+        } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+            event.preventDefault();
+            scrollToIndex(active - 1);
+        }
+    };
+
+    const current = PROJECTS[active];
+    const currentLink = current.links[0];
+
+    return (
+        <section
+            className={`spiral-section mode-${mode}`}
+            ref={sectionRef}
+            style={{ height: `calc(100vh + ${COUNT * RUNWAY_PER_CARD_VH}vh)` }}
+        >
+            <div className="spiral-sticky">
+                <div className="container spiral-layout">
+                    <div className="spiral-copy">{children}</div>
+
+                    <div className="spiral-stage-wrap">
+                        <div className="spiral-toggle" role="tablist" aria-label="Layout">
+                            <button
+                                role="tab"
+                                aria-selected={mode === 'spiral'}
+                                className={mode === 'spiral' ? 'active' : ''}
+                                onClick={() => setMode('spiral')}
+                            >
+                                Spiral
+                            </button>
+                            <button
+                                role="tab"
+                                aria-selected={mode === 'list'}
+                                className={mode === 'list' ? 'active' : ''}
+                                onClick={() => setMode('list')}
+                            >
+                                List
+                            </button>
+                        </div>
+
+                        <div
+                            className="spiral-stage"
+                            ref={stageRef}
+                            style={{ perspective: geometry.perspective }}
+                            tabIndex={0}
+                            onKeyDown={handleKeyDown}
+                            aria-label="Project carousel. Use arrow keys to rotate."
+                        >
+                            <div className="spiral-scene">
+                                <div
+                                    className="spiral-spine"
+                                    style={{ transform: `translate3d(-50%, -50%, ${-geometry.radius}px)` }}
+                                >
+                                    <span className="spiral-spine-glow" />
+                                    <span className="spiral-spine-line" />
+                                </div>
+
+                                {[-4, 0, 4].map((offset) => (
+                                    <div
+                                        key={offset}
+                                        className="spiral-ring"
+                                        style={{
+                                            width: geometry.radius * 2,
+                                            height: geometry.radius * 2,
+                                            transform: `translate3d(-50%, calc(-50% + ${-offset * geometry.rise}px), ${-geometry.radius}px) rotateX(82deg)`,
+                                        }}
+                                    />
+                                ))}
+
+                                {PROJECTS.map((project, index) => (
+                                    <SpiralCard
+                                        key={project.id}
+                                        project={project}
+                                        index={index}
+                                        progress={progress}
+                                        mix={mix}
+                                        geometry={geometry}
+                                        isActive={index === active}
+                                        onSelect={handleSelect}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="spiral-caption" aria-live="polite">
+                            <span className="spiral-caption-meta">
+                                {String(active + 1).padStart(2, '0')} — {current.date}
+                            </span>
+                            <h2 className="spiral-caption-title">{current.name}</h2>
+                            <div className="spiral-caption-actions">
+                                {currentLink && (
+                                    <a className="btn btn-primary btn-sm" href={currentLink.url} target="_blank" rel="noreferrer">
+                                        Visit {current.name} ↗
+                                    </a>
+                                )}
+                                <button
+                                    className="btn btn-ghost btn-sm"
+                                    onClick={() => projectsRef.current?.scrollIntoView({ behavior: 'smooth' })}
+                                >
+                                    All details ↓
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="spiral-hud">
+                    <span className="spiral-hud-hint">
+                        {mode === 'spiral' ? 'Scroll to rotate' : 'Scroll to browse'}
+                    </span>
+                    <span className="spiral-hud-count">
+                        {String(active + 1).padStart(2, '0')} / {String(COUNT).padStart(2, '0')}
+                    </span>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default ProjectSpiral;
