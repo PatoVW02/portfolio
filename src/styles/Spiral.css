@@ -37,9 +37,9 @@
     /* On desktop the stage runs from mid-screen to the right edge of the viewport,
        so the ring has room and cards leave through the screen edge rather than a box edge. */
     position: absolute;
-    top: 5rem;
+    top: 4.5rem;
     bottom: 0;
-    left: 50%;
+    left: 44%;
     right: 0;
     z-index: 1;
     display: flex;
@@ -54,8 +54,8 @@
     outline: none;
     /* Soft edges: cards dissolve before they reach the copy, the toggle or the caption. */
     --edge-mask:
-        linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%),
-        linear-gradient(to bottom, transparent 0%, #000 14%, #000 82%, transparent 100%);
+        linear-gradient(to right, transparent 0%, #000 22%, #000 94%, transparent 100%),
+        linear-gradient(to bottom, transparent 0%, #000 6%, #000 88%, transparent 100%);
     -webkit-mask-image: var(--edge-mask);
     mask-image: var(--edge-mask);
     -webkit-mask-composite: source-in;
@@ -102,7 +102,7 @@
     transform: translateX(-50%);
     background: linear-gradient(180deg, transparent 0%, rgba(255, 179, 71, 0.35) 40%, rgba(255, 179, 71, 0.35) 60%, transparent 100%);
     filter: blur(18px);
-    opacity: 0.6;
+    opacity: 0.45;
 }
 
 .spiral-ring {
@@ -131,24 +131,31 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    will-change: transform;
+    user-select: none;
+}
+
+.spiral-face {
+    position: absolute;
+    inset: 0;
     border-radius: 16px;
     overflow: hidden;
     background: var(--surface);
     border: 1px solid var(--line-strong);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(0, 0, 0, 0.4);
-    cursor: pointer;
-    will-change: transform, opacity;
     backface-visibility: hidden;
-    user-select: none;
+    -webkit-backface-visibility: hidden;
     transition: border-color var(--transition);
 }
 
-.spiral-card.active {
+.spiral-card.active .spiral-face {
     border-color: var(--accent);
     box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 179, 71, 0.12);
 }
 
-.spiral-card img {
+.spiral-face-front img {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -157,11 +164,51 @@
     display: block;
 }
 
-.spiral-card::after {
+.spiral-face-front::after {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg, rgba(11, 11, 12, 0.35) 0%, transparent 35%, transparent 55%, rgba(11, 11, 12, 0.85) 100%);
+}
+
+/* The back of a card: what you see once it has rotated round behind the axis. */
+.spiral-face-back {
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(60% 80% at 50% 50%, rgba(255, 179, 71, 0.16) 0%, transparent 70%),
+        repeating-linear-gradient(0deg, transparent 0 11px, rgba(255, 255, 255, 0.04) 11px 12px),
+        #26262b;
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+.spiral-back-wordmark {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.6rem, 2.4vw, 2.6rem);
+    letter-spacing: -0.04em;
+    color: rgba(242, 242, 240, 0.85);
+}
+
+.spiral-back-wordmark span {
+    color: var(--accent);
+}
+
+.spiral-back-name {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(242, 242, 240, 0.6);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .spiral-card-index,
@@ -372,7 +419,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .spiral-card,
+    .spiral-face,
     .spiral-spine,
     .spiral-ring,
     .spiral-toggle button {

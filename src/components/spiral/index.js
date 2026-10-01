@@ -17,8 +17,8 @@ import '../../styles/Spiral.css';
 
 const PROJECTS = sortNewestFirst(projectsData);
 const COUNT = PROJECTS.length;
-const STEP = 36;                       // degrees between neighbouring cards (10 positions per turn)
-const ELEVATION = 0.28;                // how far the camera sits above the ring: back cards rise by z * ELEVATION
+const STEP = 60;                       // degrees between neighbouring cards: 6 per turn, so 12 cards make two turns
+const ELEVATION = 0.2;                // how far the camera sits above the ring: back cards rise by z * ELEVATION
 const RUNWAY_PER_CARD_VH = 42;         // scroll distance that moves the spiral by one card
 
 const DEG = Math.PI / 180;
@@ -27,9 +27,9 @@ const lerp = (a, b, mix) => a + (b - a) * mix;
 
 // Geometry per breakpoint: helix radius, vertical rise per card, card size.
 const geometryFor = (width) => {
-    if (width < 640) return { radius: 235, rise: 44, cardWidth: 220, cardHeight: 138, perspective: 900 };
-    if (width < 1024) return { radius: 380, rise: 60, cardWidth: 300, cardHeight: 188, perspective: 1100 };
-    return { radius: 500, rise: 80, cardWidth: 380, cardHeight: 238, perspective: 1400 };
+    if (width < 640) return { radius: 210, rise: 36, cardWidth: 220, cardHeight: 138, perspective: 900 };
+    if (width < 1024) return { radius: 330, rise: 48, cardWidth: 300, cardHeight: 188, perspective: 1100 };
+    return { radius: 460, rise: 60, cardWidth: 380, cardHeight: 238, perspective: 1400 };
 };
 
 const SpiralCard = ({ project, index, progress, mix, geometry, isActive, onSelect }) => {
@@ -75,14 +75,11 @@ const SpiralCard = ({ project, index, progress, mix, geometry, isActive, onSelec
 
     const opacity = useTransform([progress, mix], ([p, listMix]) => {
         const t = stepsFromActive(p);
-        const theta = Math.abs(t * STEP);
-        // Past cards (left side) fade sooner than upcoming ones so the headline stays readable.
-        // Cards stay faintly visible as they pass behind the axis so the orbit reads as a ring.
-        const limit = t < 0 ? 170 : 210;
-        let spiralOpacity;
-        if (theta <= 70) spiralOpacity = 1;
-        else if (theta <= 150) spiralOpacity = lerp(1, 0.45, (theta - 70) / 80);
-        else spiralOpacity = clamp(lerp(0.45, 0, (theta - 150) / (limit - 150)), 0, 1);
+        const depth = Math.cos(t * STEP * DEG) * radius - radius;      // 0 at the front, -2R at the back
+        // Cards dim as they go round the back but never vanish; only very distant turns fade out.
+        const depthFade = lerp(1, 0.72, -depth / (2 * radius));
+        const farFade = Math.abs(t) <= 5 ? 1 : clamp(1 - (Math.abs(t) - 5) / 2, 0, 1);
+        const spiralOpacity = depthFade * farFade;
         // In list mode the cards above (already seen) fade faster than the ones still to come.
         const listOpacity = t < 0
             ? clamp(1 - (Math.abs(t) - 0.6) / 0.8, 0, 1)
@@ -91,8 +88,9 @@ const SpiralCard = ({ project, index, progress, mix, geometry, isActive, onSelec
     });
 
     const filter = useTransform([progress, mix], ([p, listMix]) => {
-        const t = Math.abs(stepsFromActive(p));
-        const brightness = lerp(clamp(1 - t * 0.1, 0.55, 1), clamp(1 - t * 0.15, 0.5, 1), listMix);
+        const t = stepsFromActive(p);
+        const depth = Math.cos(t * STEP * DEG) * radius - radius;
+        const brightness = lerp(lerp(1, 0.7, -depth / (2 * radius)), clamp(1 - Math.abs(t) * 0.15, 0.5, 1), listMix);
         return `brightness(${brightness})`;
     });
 
@@ -108,13 +106,13 @@ const SpiralCard = ({ project, index, progress, mix, geometry, isActive, onSelec
 
     const link = project.links[0];
 
+    const number = String(index + 1).padStart(2, '0');
+
     return (
         <m.div
             className={`spiral-card ${isActive ? 'active' : ''}`}
             style={{
                 transform,
-                opacity,
-                filter,
                 visibility,
                 zIndex,
                 width: geometry.cardWidth,
@@ -128,14 +126,23 @@ const SpiralCard = ({ project, index, progress, mix, geometry, isActive, onSelec
             aria-label={isActive && link ? `Open ${project.name}` : `Show ${project.name}`}
             aria-hidden={!isActive}
         >
-            <img
-                src={require(`../../assets/projects/project${project.id}.png`)}
-                alt=""
-                draggable="false"
-            />
-            <span className="spiral-card-index">{String(index + 1).padStart(2, '0')}</span>
-            <span className="spiral-card-year">{project.date.split(',')[0]}</span>
-            <span className="spiral-card-name">{project.name}</span>
+            {/* Opacity and filter live on the faces: on the wrapper they would flatten its 3D context and break backface-visibility. */}
+            <m.div className="spiral-face spiral-face-front" style={{ opacity, filter }}>
+                <img
+                    src={require(`../../assets/projects/project${project.id}.png`)}
+                    alt=""
+                    draggable="false"
+                />
+                <span className="spiral-card-index">{number}</span>
+                <span className="spiral-card-year">{project.date.split(',')[0]}</span>
+                <span className="spiral-card-name">{project.name}</span>
+            </m.div>
+
+            <m.div className="spiral-face spiral-face-back" style={{ opacity, filter }}>
+                <span className="spiral-back-wordmark">PV<span>.</span></span>
+                <span className="spiral-card-index">{number}</span>
+                <span className="spiral-back-name">{project.name}</span>
+            </m.div>
         </m.div>
     );
 };
@@ -255,7 +262,7 @@ const ProjectSpiral = ({ projectsRef, children }) => {
                                         style={{
                                             width: geometry.radius * 2,
                                             height: geometry.radius * 2,
-                                            transform: `translate3d(-50%, calc(-50% + ${-offset * geometry.rise}px), ${-geometry.radius}px) rotateX(74deg)`,
+                                            transform: `translate3d(-50%, calc(-50% + ${-offset * geometry.rise}px), ${-geometry.radius}px) rotateX(78deg)`,
                                             zIndex: Math.round(1000 - geometry.radius) + 1,
                                         }}
                                     />
