@@ -17,7 +17,8 @@ import '../../styles/Spiral.css';
 
 const PROJECTS = sortNewestFirst(projectsData);
 const COUNT = PROJECTS.length;
-const STEP = 40;                       // degrees between neighbouring cards; wider than 360/N so cards don't pile up
+const STEP = 36;                       // degrees between neighbouring cards (10 positions per turn)
+const ELEVATION = 0.28;                // how far the camera sits above the ring: back cards rise by z * ELEVATION
 const RUNWAY_PER_CARD_VH = 42;         // scroll distance that moves the spiral by one card
 
 const DEG = Math.PI / 180;
@@ -26,9 +27,9 @@ const lerp = (a, b, mix) => a + (b - a) * mix;
 
 // Geometry per breakpoint: helix radius, vertical rise per card, card size.
 const geometryFor = (width) => {
-    if (width < 640) return { radius: 235, rise: 30, cardWidth: 220, cardHeight: 138, perspective: 900 };
-    if (width < 1024) return { radius: 380, rise: 42, cardWidth: 300, cardHeight: 188, perspective: 1100 };
-    return { radius: 560, rise: 56, cardWidth: 380, cardHeight: 238, perspective: 1400 };
+    if (width < 640) return { radius: 235, rise: 44, cardWidth: 220, cardHeight: 138, perspective: 900 };
+    if (width < 1024) return { radius: 380, rise: 60, cardWidth: 300, cardHeight: 188, perspective: 1100 };
+    return { radius: 500, rise: 80, cardWidth: 380, cardHeight: 238, perspective: 1400 };
 };
 
 const SpiralCard = ({ project, index, progress, mix, geometry, isActive, onSelect }) => {
@@ -43,12 +44,14 @@ const SpiralCard = ({ project, index, progress, mix, geometry, isActive, onSelec
         const rad = theta * DEG;
 
         // Helix placement: front card at z = 0, others wind up and back around the axis.
+        // Seen from slightly above, so cards at the back of the ring sit higher on screen.
+        const depth = Math.cos(rad) * radius - radius;
         const spiral = {
             x: Math.sin(rad) * radius,
-            y: -t * rise,
-            z: Math.cos(rad) * radius - radius,
+            y: -t * rise + depth * ELEVATION,
+            z: depth,
             rotate: theta,
-            scale: 1 + 0.06 * Math.max(0, 1 - Math.abs(t)) - 0.05 * Math.min(Math.abs(t), 3),
+            scale: 1 + 0.06 * Math.max(0, 1 - Math.abs(t)) - 0.04 * Math.min(Math.abs(t), 3),
         };
 
         // List placement: a vertical filmstrip that shrinks away from the centre.
@@ -66,15 +69,20 @@ const SpiralCard = ({ project, index, progress, mix, geometry, isActive, onSelec
         const rotate = lerp(spiral.rotate, list.rotate, listMix);
         const scale = lerp(spiral.scale, list.scale, listMix);
 
-        return `translate3d(${x}px, ${y}px, ${z}px) rotateY(${rotate}deg) scale(${scale})`;
+        const tilt = -6 * (1 - listMix);
+        return `translate3d(${x}px, ${y}px, ${z}px) rotateY(${rotate}deg) rotateX(${tilt}deg) scale(${scale})`;
     });
 
     const opacity = useTransform([progress, mix], ([p, listMix]) => {
         const t = stepsFromActive(p);
         const theta = Math.abs(t * STEP);
         // Past cards (left side) fade sooner than upcoming ones so the headline stays readable.
-        const limit = t < 0 ? 105 : 150;
-        const spiralOpacity = theta <= 60 ? 1 : clamp(1 - (theta - 60) / (limit - 60), 0, 1);
+        // Cards stay faintly visible as they pass behind the axis so the orbit reads as a ring.
+        const limit = t < 0 ? 170 : 210;
+        let spiralOpacity;
+        if (theta <= 70) spiralOpacity = 1;
+        else if (theta <= 150) spiralOpacity = lerp(1, 0.45, (theta - 70) / 80);
+        else spiralOpacity = clamp(lerp(0.45, 0, (theta - 150) / (limit - 150)), 0, 1);
         // In list mode the cards above (already seen) fade faster than the ones still to come.
         const listOpacity = t < 0
             ? clamp(1 - (Math.abs(t) - 0.6) / 0.8, 0, 1)
@@ -84,7 +92,7 @@ const SpiralCard = ({ project, index, progress, mix, geometry, isActive, onSelec
 
     const filter = useTransform([progress, mix], ([p, listMix]) => {
         const t = Math.abs(stepsFromActive(p));
-        const brightness = lerp(clamp(1 - t * 0.12, 0.45, 1), clamp(1 - t * 0.15, 0.5, 1), listMix);
+        const brightness = lerp(clamp(1 - t * 0.1, 0.55, 1), clamp(1 - t * 0.15, 0.5, 1), listMix);
         return `brightness(${brightness})`;
     });
 
@@ -240,14 +248,14 @@ const ProjectSpiral = ({ projectsRef, children }) => {
                                     <span className="spiral-spine-line" />
                                 </div>
 
-                                {[-4, 0, 4].map((offset) => (
+                                {[-3, 0, 3].map((offset) => (
                                     <div
                                         key={offset}
                                         className="spiral-ring"
                                         style={{
                                             width: geometry.radius * 2,
                                             height: geometry.radius * 2,
-                                            transform: `translate3d(-50%, calc(-50% + ${-offset * geometry.rise}px), ${-geometry.radius}px) rotateX(82deg)`,
+                                            transform: `translate3d(-50%, calc(-50% + ${-offset * geometry.rise}px), ${-geometry.radius}px) rotateX(74deg)`,
                                             zIndex: Math.round(1000 - geometry.radius) + 1,
                                         }}
                                     />
