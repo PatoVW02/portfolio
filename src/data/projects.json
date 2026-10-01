@@ -290,5 +290,75 @@
                 "url": "https://www.medlink.com.mx/"
             }
         ]
+    },
+    {
+        "id": 11,
+        "name": "Horizon",
+        "description": "Sky at a glance. Weather app for iPhone and iPad that draws the sky instead of showing tables of numbers: the background follows the real sun and moon with the forecast drawn over it. Includes a draggable timeline, a map with radar, satellite and tropical-storm layers, a moon screen, themes and typefaces, and push alerts for severe weather. A Pro tier via Superwall unlocks radar, alerts and extra looks. Backend is framework-free TypeScript on Vercel serverless functions with Supabase Postgres and PostGIS, pulling from Rainbow.ai, NOAA/NHC, GDACS and NWS.",
+        "technologies": [
+            {
+                "name": "Swift",
+                "icon": "swift.svg"
+            },
+            {
+                "name": "TypeScript",
+                "icon": "typescript.svg"
+            },
+            {
+                "name": "React",
+                "icon": "react.svg"
+            },
+            {
+                "name": "Vite",
+                "icon": "vite.svg"
+            },
+            {
+                "name": "Supabase",
+                "icon": "supabase.svg"
+            }
+        ],
+        "date": "2026, September",
+        "links": [
+            {
+                "name": "Website",
+                "icon": "website.svg",
+                "url": "https://horizon-landing-navy.vercel.app"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Mont",
+        "description": "Personal life-management app for iOS and Android (formerly LifeOS) that reasons across finances, debts, tasks, calendar and wearable data to produce one honest daily briefing, with no streaks or gamification and user-chosen modules. FastAPI backend with async SQLAlchemy, an ARQ worker, Postgres and Redis on Railway, with per-user envelope encryption for money, token and health data and an Anthropic/OpenAI abstraction for the AI features. Native SwiftUI and Jetpack Compose apps share a typed API client with offline cache, plus a Next.js marketing site. Localized in English and Mexican Spanish.",
+        "technologies": [
+            {
+                "name": "Swift",
+                "icon": "swift.svg"
+            },
+            {
+                "name": "Kotlin",
+                "icon": "kotlin.svg"
+            },
+            {
+                "name": "FastAPI",
+                "icon": "fastapi.svg"
+            },
+            {
+                "name": "Python",
+                "icon": "python.svg"
+            },
+            {
+                "name": "Next.js",
+                "icon": "nextjs.svg"
+            }
+        ],
+        "date": "2026, May",
+        "links": [
+            {
+                "name": "Website",
+                "icon": "website.svg",
+                "url": "https://getmontapp.com"
+            }
+        ]
     }
 ]

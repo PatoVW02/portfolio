@@ -1,10 +1,18 @@
 import Typewriter from 'typewriter-effect';
-import { ArrowDownCircle } from 'react-bootstrap-icons';
 import { LazyMotion, domAnimation, m } from 'framer-motion';
+
+import Spiral from '../../components/spiral';
 import Projects from './projects';
 import Contact from './contact';
+import CVDoc from '../../assets/Patricio Villarreal Welsh.pdf';
 
 import "../../styles/Home.css"
+
+const fadeUp = (delay = 0) => ({
+    initial: { opacity: 0, y: 24 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.9, delay, ease: [0.22, 1, 0.36, 1] },
+});
 
 const Home = ({ projectsRef, contactRef }) => {
     const executeProjectsScroll = () => {
@@ -13,61 +21,71 @@ const Home = ({ projectsRef, contactRef }) => {
 
     return (
         <LazyMotion features={domAnimation}>
-            <div className="home-container">
-                <div className="main-content">
-                    <div className="greetings">
-                        <m.h1
-                            initial={{
-                                opacity: 0
-                            }}
-                            animate={{
-                                opacity: 1,
-                            }}
-                            transition={{ duration: 2 }}
-                        >
-                            {'<'} Patricio Villarreal {'/>'}
-                        </m.h1>
-                    </div>
+            <section className="hero">
+                <Spiral />
 
-                    <div className="description-container">
+                <div className="container hero-inner">
+                    <m.span className="eyebrow" {...fadeUp(0.1)}>
+                        Fullstack developer · Monterrey, MX
+                    </m.span>
+
+                    <m.h1 className="hero-title" {...fadeUp(0.25)}>
+                        Patricio
+                        <br />
+                        Villarreal
+                    </m.h1>
+
+                    <m.div className="hero-typewriter" {...fadeUp(0.4)}>
                         <Typewriter
-                            id="typewriter"
                             options={{
-                                strings: ["Building seemless digital experiences", "I'm a fullstack developer", "Building websites and applications", "Based in Monterrey, Mexico", "Passionate software developer", "Tech enthusiast"],
+                                strings: [
+                                    "Building seamless digital experiences",
+                                    "Websites, apps and products, end to end",
+                                    "From the first sketch to the last deploy",
+                                    "Based in Monterrey, Mexico",
+                                ],
                                 autoStart: true,
                                 loop: true,
                             }}
                         />
+                    </m.div>
 
-                        <div className="descriptions-container">
-                            <p className="description-1">
-                                At 23 and a Computer Science graduate, I am passionate about creating seamless digital experiences. Specialized in fullstack development, I have experience in building websites and applications.
-                            </p>
-                            <p className="description-2">
-                                I am committed to continuous learning, constantly seeking opportunities to expand my skills and knowledge.
-                            </p>
-                        </div>
+                    <m.p className="hero-bio" {...fadeUp(0.55)}>
+                        I'm a 23-year-old Computer Science graduate who likes shipping the whole thing:
+                        the interface, the backend, and the parts in between. Always learning, always building.
+                    </m.p>
 
-                        <m.div
-                            className="arrow-down"
-                            onClick={executeProjectsScroll}
-                            whileHover={{
-                                scale: 1.1,
-                                transition: { duration: 0.5 }
-                            }}
-                            whileTap={{
-                                scale: 0.9,
-                            }}
+                    <m.div className="hero-actions" {...fadeUp(0.7)}>
+                        <button className="btn btn-primary" onClick={executeProjectsScroll}>
+                            See projects
+                        </button>
+                        <a
+                            className="btn btn-ghost"
+                            href={CVDoc}
+                            download="Patricio Villarreal Welsh"
+                            target="_blank"
+                            rel="noreferrer"
                         >
-                            <ArrowDownCircle />
-                            <p>Scroll down</p>
-                        </m.div>
-                    </div>
+                            Download CV
+                        </a>
+                    </m.div>
                 </div>
 
-                <Projects projectsRef={projectsRef} />
-                <Contact contactRef={contactRef} />
-            </div>
+                <m.button
+                    className="scroll-cue"
+                    onClick={executeProjectsScroll}
+                    aria-label="Scroll to projects"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1, delay: 1.2 }}
+                >
+                    <span className="scroll-cue-line" />
+                    <span className="scroll-cue-label">Scroll</span>
+                </m.button>
+            </section>
+
+            <Projects projectsRef={projectsRef} />
+            <Contact contactRef={contactRef} />
         </LazyMotion>
     );
 };

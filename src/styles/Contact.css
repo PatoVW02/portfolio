@@ -1,44 +1,93 @@
-/* Contact Styles */
-.contact-content {
-    margin-bottom: 20vh;
-    padding-top: clamp(2rem, 5vh, 4rem);
-    border-top: 1px solid rgba(125, 211, 252, 0.15);
-    margin-top: 2rem;
+.contact-lead {
+    max-width: 48ch;
+    margin: 0 0 2.5rem;
+    color: var(--muted);
+    font-size: clamp(0.95rem, 1.3vw, 1.1rem);
 }
 
-.email-caption {
-    margin-top: 3vh;
-    font-size: clamp(1rem, 1.5vw, 1.5rem);
-    color: #ffffff;
-}
-
-.email-caption-light {
-    text-decoration: none;
-    color: #7dd3fc;
+.contact-email {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0 0 1.25rem;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--line-strong);
+    color: var(--text);
+    text-align: left;
     cursor: pointer;
+    transition: color var(--transition), border-color var(--transition);
 }
 
-.email {
-    display: inline-block;
-    font-size: clamp(1.5rem, 3vw, 3rem);
-    font-weight: bolder;
-    cursor: pointer;
-    text-decoration: none;
-    color: #9bdbf6;
-    transition: all 0.3s ease;
+.contact-email-text {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.6rem, 6.5vw, 5.5rem);
+    line-height: 1;
+    letter-spacing: -0.035em;
+    overflow-wrap: anywhere;
 }
 
-.location-detail {
-    margin-top: 3vh;
-    font-size: clamp(1rem, 1.5vw, 1.5rem);
-    color: #ffffff;
+.contact-email-hint {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition: color var(--transition);
 }
 
-.social-media {
-    margin-top: 3vh;
+.contact-email:hover {
+    color: var(--accent);
+    border-color: var(--accent);
 }
 
-.social-icon {
-    margin: 0 1rem;
-    cursor: pointer;
+.contact-email:hover .contact-email-hint,
+.contact-email.copied .contact-email-hint {
+    color: var(--accent);
+}
+
+.contact-email.copied {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.contact-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.contact-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.contact-meta-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.contact-socials {
+    display: flex;
+    gap: 0.25rem;
+    margin-left: -0.5rem;
+    color: var(--text);
+}
+
+.contact-socials .social-icon {
+    transition: color var(--transition), transform var(--transition);
+}
+
+.contact-socials .social-icon:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
 }
