@@ -15,7 +15,7 @@
 
 .spiral-layout {
     display: grid;
-    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
     gap: 2rem;
     height: 100%;
@@ -69,7 +69,6 @@
 .spiral-scene {
     position: absolute;
     inset: 0;
-    transform-style: preserve-3d;
 }
 
 /* The axis the cards wind around. */
@@ -332,6 +331,19 @@
 
     .spiral-stage-wrap {
         min-height: 0;
+        /* Let the stage bleed to the screen edges so cards leave the viewport instead of being clipped mid-screen. */
+        margin-left: calc(var(--gutter) * -1);
+        margin-right: calc(var(--gutter) * -1);
+    }
+
+    .spiral-stage {
+        --edge-mask:
+            linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%),
+            linear-gradient(to bottom, transparent 0%, #000 18%, #000 84%, transparent 100%);
+    }
+
+    .spiral-toggle {
+        right: var(--gutter);
     }
 
     .spiral-toggle {

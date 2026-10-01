@@ -17,7 +17,7 @@ import '../../styles/Spiral.css';
 
 const PROJECTS = sortNewestFirst(projectsData);
 const COUNT = PROJECTS.length;
-const STEP = 360 / COUNT;              // degrees between neighbouring cards on the helix
+const STEP = 40;                       // degrees between neighbouring cards; wider than 360/N so cards don't pile up
 const RUNWAY_PER_CARD_VH = 42;         // scroll distance that moves the spiral by one card
 
 const DEG = Math.PI / 180;
@@ -26,9 +26,9 @@ const lerp = (a, b, mix) => a + (b - a) * mix;
 
 // Geometry per breakpoint: helix radius, vertical rise per card, card size.
 const geometryFor = (width) => {
-    if (width < 640) return { radius: 215, rise: 34, cardWidth: 230, cardHeight: 144, perspective: 900 };
-    if (width < 1024) return { radius: 320, rise: 46, cardWidth: 320, cardHeight: 200, perspective: 1100 };
-    return { radius: 520, rise: 64, cardWidth: 420, cardHeight: 262, perspective: 1400 };
+    if (width < 640) return { radius: 235, rise: 30, cardWidth: 220, cardHeight: 138, perspective: 900 };
+    if (width < 1024) return { radius: 380, rise: 42, cardWidth: 300, cardHeight: 188, perspective: 1100 };
+    return { radius: 560, rise: 56, cardWidth: 380, cardHeight: 238, perspective: 1400 };
 };
 
 const SpiralCard = ({ project, index, progress, mix, geometry, isActive, onSelect }) => {
@@ -48,7 +48,7 @@ const SpiralCard = ({ project, index, progress, mix, geometry, isActive, onSelec
             y: -t * rise,
             z: Math.cos(rad) * radius - radius,
             rotate: theta,
-            scale: 1 + 0.08 * Math.max(0, 1 - Math.abs(t)),
+            scale: 1 + 0.06 * Math.max(0, 1 - Math.abs(t)) - 0.05 * Math.min(Math.abs(t), 3),
         };
 
         // List placement: a vertical filmstrip that shrinks away from the centre.
@@ -90,6 +90,14 @@ const SpiralCard = ({ project, index, progress, mix, geometry, isActive, onSelec
 
     const visibility = useTransform(opacity, (value) => (value <= 0.01 ? 'hidden' : 'visible'));
 
+    // Cards are stacked as flat layers ordered by depth, so a tilted neighbour never cuts through the front card.
+    const zIndex = useTransform([progress, mix], ([p, listMix]) => {
+        const t = stepsFromActive(p);
+        const spiralDepth = Math.cos(t * STEP * DEG) * radius - radius;
+        const listDepth = -Math.abs(t) * 40;
+        return Math.round(1000 + lerp(spiralDepth, listDepth, listMix));
+    });
+
     const link = project.links[0];
 
     return (
@@ -100,6 +108,7 @@ const SpiralCard = ({ project, index, progress, mix, geometry, isActive, onSelec
                 opacity,
                 filter,
                 visibility,
+                zIndex,
                 width: geometry.cardWidth,
                 height: cardHeight,
                 marginLeft: -geometry.cardWidth / 2,
@@ -222,7 +231,10 @@ const ProjectSpiral = ({ projectsRef, children }) => {
                             <div className="spiral-scene">
                                 <div
                                     className="spiral-spine"
-                                    style={{ transform: `translate3d(-50%, -50%, ${-geometry.radius}px)` }}
+                                    style={{
+                                        transform: `translate3d(-50%, -50%, ${-geometry.radius}px)`,
+                                        zIndex: Math.round(1000 - geometry.radius),
+                                    }}
                                 >
                                     <span className="spiral-spine-glow" />
                                     <span className="spiral-spine-line" />
@@ -236,6 +248,7 @@ const ProjectSpiral = ({ projectsRef, children }) => {
                                             width: geometry.radius * 2,
                                             height: geometry.radius * 2,
                                             transform: `translate3d(-50%, calc(-50% + ${-offset * geometry.rise}px), ${-geometry.radius}px) rotateX(82deg)`,
+                                            zIndex: Math.round(1000 - geometry.radius) + 1,
                                         }}
                                     />
                                 ))}
