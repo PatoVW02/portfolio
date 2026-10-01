@@ -343,13 +343,9 @@
     }
 
     .spiral-toggle {
-        right: var(--gutter);
-    }
-
-    .spiral-toggle {
         top: 0;
         left: auto;
-        right: 0;
+        right: var(--gutter);
         transform: none;
     }
 
