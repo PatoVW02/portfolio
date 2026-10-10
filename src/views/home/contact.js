@@ -4,73 +4,60 @@ import { SocialIcon } from 'react-social-icons';
 
 import "../../styles/Contact.css"
 
+const EMAIL = "hey@patovw.com";
+
 const Contact = ({ contactRef }) => {
     const [isEmailCopied, setIsEmailCopied] = useState(false);
 
     const copyEmail = () => {
-        navigator.clipboard.writeText("hey@patovw.com");
+        navigator.clipboard.writeText(EMAIL);
         setIsEmailCopied(true);
 
         setTimeout(() => {
             setIsEmailCopied(false);
-        } , 2000);
+        }, 2000);
     }
 
     return (
-        <>
-            <m.h3
-                className="secondary-title"
-                ref={contactRef}
-                whileInView={{
-                    scale: 1.1,
-                    transition: { duration: 1 }
-                }}
-            >
-                {'< '}Contact Me{' />'}
-            </m.h3>
+        <section className="section contact" ref={contactRef} id="contact">
+            <div className="container">
+                <div className="section-head">
+                    <span className="eyebrow">02 / Contact</span>
+                    <h2 className="section-title">Let's build <em>something.</em></h2>
+                </div>
 
-            <div className="contact-content">
-                <div className="contact-info">
-                    <div className="email-caption">
-                        Get in touch
-                        <span className="email-caption-light" onClick={copyEmail}>
-                            {' (click to copy)'}
-                        </span>
+                <p className="contact-lead">
+                    Have a product in mind, a team that needs a fullstack hand, or just want to say hi?
+                    My inbox is open.
+                </p>
+
+                <m.button
+                    className={`contact-email ${isEmailCopied ? 'copied' : ''}`}
+                    onClick={copyEmail}
+                    whileTap={{ scale: 0.98 }}
+                    aria-live="polite"
+                >
+                    <span className="contact-email-text">{isEmailCopied ? 'Copied to clipboard' : EMAIL}</span>
+                    <span className="contact-email-hint">{isEmailCopied ? '✓' : 'click to copy'}</span>
+                </m.button>
+
+                <div className="contact-meta">
+                    <div className="contact-meta-item">
+                        <span className="contact-meta-label">Location</span>
+                        <span>Monterrey, Mexico</span>
                     </div>
 
-                    {!isEmailCopied ? (
-                        <m.span
-                            className="email"
-                            onClick={copyEmail}
-                            whileHover={{
-                                scale: 1.1,
-                                color: "#38bdf8",
-                                transition: { duration: 0 }
-                            }}
-                            whileTap={{
-                                scale: 0.8,
-                                color: "#38bdf8",
-                                transition: { duration: 0 }
-                            }}
-                        >
-                            hey@patovw.com
-                        </m.span>
-                    ) : (
-                        <m.div className="email">
-                            Email copied!
-                        </m.div>
-                    )}
-
-                    <div className="location-detail">Location: Monterrey, Mexico</div>
-
-                    <div className="social-media">
-                        <SocialIcon className="social-icon" url="https://www.linkedin.com/in/patricio-villarreal-welsh-a786901b4" target="_blank" bgColor="transparent" fgColor='white' />
-                        <SocialIcon className="social-icon" url="https://github.com/PatoVW02" target="_blank" bgColor="transparent" fgColor='white' />
-                        <SocialIcon className="social-icon" url="https://www.instagram.com/patovw02" target="_blank" bgColor="transparent" fgColor='white' />
+                    <div className="contact-meta-item">
+                        <span className="contact-meta-label">Elsewhere</span>
+                        <div className="contact-socials">
+                            <SocialIcon url="https://www.linkedin.com/in/patricio-villarreal-welsh-a786901b4" target="_blank" bgColor="transparent" fgColor="currentColor" style={{ width: 36, height: 36 }} />
+                            <SocialIcon url="https://github.com/PatoVW02" target="_blank" bgColor="transparent" fgColor="currentColor" style={{ width: 36, height: 36 }} />
+                            <SocialIcon url="https://www.instagram.com/patovw02" target="_blank" bgColor="transparent" fgColor="currentColor" style={{ width: 36, height: 36 }} />
+                        </div>
                     </div>
                 </div>
             </div>
-        </>
+        </section>
     )
 }
 

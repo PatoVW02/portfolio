@@ -1,27 +1,23 @@
 import { Outlet } from "react-router-dom";
 
 import Navbar from "../components/navbar";
-import Background from "../components/background";
 
 const MainLayout = ({ projectsRef, contactRef }) => {
     return (
-        <div>
-            <Background style={{ zIndex: -1 }} />
+        <>
+            <Navbar projectsRef={projectsRef} contactRef={contactRef} />
 
-            <div style={{ position: 'relative', zIndex: 1 }}>
-                <div>
-                    <Navbar projectsRef={projectsRef} contactRef={contactRef} />
-                </div>
+            <main>
+                <Outlet />
+            </main>
 
-                <div style={{
-                    marginTop: "2.5%",
-                    marginLeft: "5%",
-                    marginRight: "5%",
-                }}>
-                    <Outlet />
+            <footer className="site-footer">
+                <div className="container site-footer-inner">
+                    <span>© {new Date().getFullYear()} Patricio Villarreal</span>
+                    <span className="site-footer-muted">Monterrey, MX</span>
                 </div>
-            </div>
-        </div>
+            </footer>
+        </>
     )
 };
 

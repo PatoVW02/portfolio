@@ -1,0 +1,428 @@
+/* ===== Scroll runway + pinned viewport ===== */
+.spiral-section {
+    position: relative;
+}
+
+.spiral-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+}
+
+.spiral-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 2rem;
+    height: 100%;
+    padding-top: 4.5rem;
+}
+
+/* ===== Copy column (hero text) ===== */
+.spiral-copy {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+}
+
+/* ===== Stage ===== */
+.spiral-stage-wrap {
+    /* On desktop the stage runs from mid-screen to the right edge of the viewport,
+       so the ring has room and cards leave through the screen edge rather than a box edge. */
+    position: absolute;
+    top: 4.5rem;
+    bottom: 0;
+    left: 44%;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.spiral-stage {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    outline: none;
+    /* Soft edges: cards dissolve before they reach the copy, the toggle or the caption. */
+    --edge-mask:
+        linear-gradient(to right, transparent 0%, #000 22%, #000 94%, transparent 100%),
+        linear-gradient(to bottom, transparent 0%, #000 6%, #000 88%, transparent 100%);
+    -webkit-mask-image: var(--edge-mask);
+    mask-image: var(--edge-mask);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+.spiral-stage:focus-visible {
+    box-shadow: inset 0 0 0 1px var(--accent);
+    border-radius: 1rem;
+}
+
+.spiral-scene {
+    position: absolute;
+    inset: 0;
+}
+
+/* The axis the cards wind around. */
+.spiral-spine {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 150%;
+    pointer-events: none;
+}
+
+.spiral-spine-line {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, var(--accent) 35%, var(--accent) 65%, transparent 100%);
+    opacity: 0.55;
+}
+
+.spiral-spine-glow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 48px;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, transparent 0%, rgba(255, 179, 71, 0.35) 40%, rgba(255, 179, 71, 0.35) 60%, transparent 100%);
+    filter: blur(18px);
+    opacity: 0.45;
+}
+
+.spiral-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 179, 71, 0.34);
+    box-shadow: 0 0 30px rgba(255, 179, 71, 0.1) inset;
+    pointer-events: none;
+}
+
+.mode-list .spiral-spine,
+.mode-list .spiral-ring {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.spiral-spine,
+.spiral-ring {
+    transition: opacity 0.5s ease;
+}
+
+/* ===== Cards ===== */
+.spiral-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    will-change: transform;
+    user-select: none;
+}
+
+.spiral-face {
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(0, 0, 0, 0.4);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: border-color var(--transition);
+}
+
+.spiral-card.active .spiral-face {
+    border-color: var(--accent);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 179, 71, 0.12);
+}
+
+.spiral-face-front img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.spiral-face-front::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(11, 11, 12, 0.35) 0%, transparent 35%, transparent 55%, rgba(11, 11, 12, 0.85) 100%);
+}
+
+/* The back of a card: what you see once it has rotated round behind the axis. */
+.spiral-face-back {
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(60% 80% at 50% 50%, rgba(255, 179, 71, 0.16) 0%, transparent 70%),
+        repeating-linear-gradient(0deg, transparent 0 11px, rgba(255, 255, 255, 0.04) 11px 12px),
+        #26262b;
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+.spiral-back-wordmark {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.6rem, 2.4vw, 2.6rem);
+    letter-spacing: -0.04em;
+    color: rgba(242, 242, 240, 0.85);
+}
+
+.spiral-back-wordmark span {
+    color: var(--accent);
+}
+
+.spiral-back-name {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(242, 242, 240, 0.6);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.spiral-card-index,
+.spiral-card-year,
+.spiral-card-name {
+    position: absolute;
+    z-index: 1;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.spiral-card-index {
+    top: 0.9rem;
+    left: 1rem;
+    color: var(--accent);
+}
+
+.spiral-card-year {
+    top: 0.9rem;
+    right: 1rem;
+    color: rgba(242, 242, 240, 0.7);
+}
+
+.spiral-card-name {
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.9rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+    letter-spacing: -0.02em;
+    text-transform: none;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ===== Toggle ===== */
+.spiral-toggle {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    display: inline-flex;
+    padding: 0.25rem;
+    border-radius: 999px;
+    border: 1px solid var(--line-strong);
+    background: rgba(20, 20, 22, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.spiral-toggle button {
+    padding: 0.4rem 1rem;
+    border: none;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color var(--transition), color var(--transition);
+}
+
+.spiral-toggle button.active {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+/* ===== Caption under the stage ===== */
+.spiral-caption {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.spiral-caption-meta {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.spiral-caption-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.6rem, 3vw, 2.6rem);
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+.spiral-caption-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+}
+
+.btn-sm {
+    padding: 0.55rem 1.1rem;
+    font-size: 0.82rem;
+}
+
+/* ===== HUD counter ===== */
+.spiral-hud {
+    position: absolute;
+    right: var(--gutter);
+    bottom: 1.5rem;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.spiral-hud::before {
+    content: '';
+    width: 1.5rem;
+    height: 1px;
+    background: var(--accent);
+}
+
+.spiral-hud-count {
+    color: var(--text);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1023px) {
+    .spiral-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto minmax(0, 1fr);
+        align-items: start;
+        gap: 0.5rem;
+        padding-top: 5.5rem;
+    }
+
+    .spiral-copy {
+        gap: 0.75rem;
+    }
+
+    .spiral-copy .hero-bio,
+    .spiral-copy .hero-actions {
+        display: none;
+    }
+
+    .spiral-copy .hero-title {
+        font-size: clamp(2.4rem, 9vw, 4rem);
+    }
+
+    .spiral-copy .hero-typewriter {
+        font-size: 1rem;
+        min-height: 1.4em;
+    }
+
+    .spiral-stage-wrap {
+        position: relative;
+        inset: auto;
+        height: 100%;
+        min-height: 0;
+        /* Let the stage bleed to the screen edges so cards leave the viewport instead of being clipped mid-screen. */
+        margin-left: calc(var(--gutter) * -1);
+        margin-right: calc(var(--gutter) * -1);
+    }
+
+    .spiral-stage {
+        --edge-mask:
+            linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%),
+            linear-gradient(to bottom, transparent 0%, #000 18%, #000 84%, transparent 100%);
+    }
+
+    .spiral-toggle {
+        top: 0;
+        left: auto;
+        right: var(--gutter);
+        transform: none;
+    }
+
+    .spiral-caption {
+        padding-bottom: 3.5rem;
+        gap: 0.35rem;
+    }
+
+    .spiral-caption-actions .btn-ghost {
+        display: none;
+    }
+
+    .spiral-hud {
+        bottom: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .spiral-face,
+    .spiral-spine,
+    .spiral-ring,
+    .spiral-toggle button {
+        transition: none;
+    }
+}
